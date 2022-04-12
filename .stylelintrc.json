@@ -1,0 +1,6 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"], 
+  "rules": {
+    "value-list-comma-newline-after": "always-multi-line"
+  }
+}
