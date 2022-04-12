@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
     "next": "12.1.4",
@@ -14,8 +15,11 @@
     "react-dom": "18.0.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.0.1",
     "eslint": "8.13.0",
     "eslint-config-next": "12.1.4",
+    "jest": "^27.5.1",
     "sass": "^1.50.0"
   }
 }
