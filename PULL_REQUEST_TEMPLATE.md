@@ -5,7 +5,7 @@
 
 Designs: [Designs](DESIGN_URL)
 
-See Story: [ISSUE_NUMBER](ISSUE_URL)
+See Story: [ISSUE_NUMBER]((https://sparkbox.atlassian.net/browse/FSA22V1-ISSUE_NUMBER))
 
 ### Validation
 <!-- Delete anything irrelevant to this PR -->
@@ -49,15 +49,14 @@ In these browsers, behavior & design closely match original specifications. A us
 
 **Windows**
 
-* [ ] IE 11
 * [ ] Chrome (last 6 months)
 * [ ] Firefox (last 6 months)
-* [ ] Edge 18
+* [ ] Edge 18 (last 6 months)
 
 **Mobile**
 
 * [ ] Safari (last 2 major versions)
-* [ ] Android 7+
+* [ ] Android (last 2 Android versions)
 * [ ] Samsung Browser (last year)
 * [ ] Chrome (last 6 months)
 * [ ] Firefox (last 6 months)
@@ -66,19 +65,16 @@ In these browsers, behavior & design closely match original specifications. A us
 
 In these browsers, behavior & design are acceptable, but may not be as originally intended. A user is still able to access all content and functionality as described.
 
-* [ ] IE 10 on Windows
-* [ ] Android 6+
-* [ ] Safari 7+
-* [ ] Edge 16
+* [ ] Android
+* [ ] Safari (last 4 major OS versions)
+* [ ] Edge 18
 * [ ] Samsung Browser (last 3 years)
 
 #### Bronze Level Support
 
 In these browsers, behavior & design may not be great, but the content doesn't appear "broken" to the user, either. All content is accessible, and functionality is as described. Additional testing may be required during implementation.
 
-* [ ] IE 9 on Windows
-* [ ] Android 5+
-* [ ] Safari 6+
+* [ ] IE 11
 
 ---
 
