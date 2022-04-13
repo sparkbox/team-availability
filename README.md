@@ -37,13 +37,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ---
 
-#### Browser Testing
+## Browser Testing
 <!--
 The browser list should be tailored to specific engagement and client needs.
 Delete if irrelevant to this issue
 -->
 
-#### Gold Level Support
+## Gold Level Support
 
 In these browsers, behavior & design closely match original specifications. A user is able to access all content and functionality, including the usability of required assistive devices, such as keyboard and screenreader.
 
@@ -67,7 +67,7 @@ In these browsers, behavior & design closely match original specifications. A us
 * [ ] Chrome (last 6 months)
 * [ ] Firefox (last 6 months)
 
-#### Silver Level Support
+## Silver Level Support
 
 In these browsers, behavior & design are acceptable, but may not be as originally intended. A user is still able to access all content and functionality as described.
 
@@ -76,24 +76,8 @@ In these browsers, behavior & design are acceptable, but may not be as originall
 * [ ] Edge 18
 * [ ] Samsung Browser (last 3 years)
 
-#### Bronze Level Support
+## Bronze Level Support
 
 In these browsers, behavior & design may not be great, but the content doesn't appear "broken" to the user, either. All content is accessible, and functionality is as described. Additional testing may be required during implementation.
 
 * [ ] IE 11
-
----
-
-### Changelog
-<!--
-This is a template to provide copy/paste-able changelog notes. Please delete irrelevant sections, fill in blanks with accurate info, and change links to point to relevant commits.
--->
-
-#### Features ✨
-
-* [ ] [Add _____](link to commit/pr)
-
-#### Fixes 🚧
-
-* [ ] [Fix _____](link to commit/pr)
-
