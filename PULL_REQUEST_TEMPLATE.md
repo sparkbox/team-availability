@@ -17,6 +17,7 @@ See Story: [ISSUE_NUMBER]((https://sparkbox.atlassian.net/browse/FSA22V1-ISSUE_N
 * [ ] This PR has new SCSS functions, mixins, or variables, so [Sass Tests](https://seesparkbox.com/foundry/how_and_why_we_unit_test_our_sass) were added or updated, and they pass.
 * [ ] This PR has copy changes, so copy was proofread and approved.
 * [ ] The content of this PR requires documentation, so we added a detailed description of the component's purpose, requirements, quirks, and instructions for use by designers and developers. Along with accessibility information if pertinent.
+* [ ] Changes are browser tested. This includes functionality, accessibility, responsiveness, and design.
 
 #### To Validate
 
@@ -75,18 +76,3 @@ In these browsers, behavior & design are acceptable, but may not be as originall
 In these browsers, behavior & design may not be great, but the content doesn't appear "broken" to the user, either. All content is accessible, and functionality is as described. Additional testing may be required during implementation.
 
 * [ ] IE 11
-
----
-
-### Changelog
-<!--
-This is a template to provide copy/paste-able changelog notes. Please delete irrelevant sections, fill in blanks with accurate info, and change links to point to relevant commits.
--->
-
-#### Features ✨
-
-* [ ] [Add _____](link to commit/pr)
-
-#### Fixes 🚧
-
-* [ ] [Fix _____](link to commit/pr)

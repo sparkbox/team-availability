@@ -32,3 +32,68 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+---
+
+#### Browser Testing
+<!--
+The browser list should be tailored to specific engagement and client needs.
+Delete if irrelevant to this issue
+-->
+
+#### Gold Level Support
+
+In these browsers, behavior & design closely match original specifications. A user is able to access all content and functionality, including the usability of required assistive devices, such as keyboard and screenreader.
+
+**macOS**
+
+* [ ] Safari (last 2 major versions)
+* [ ] Chrome (last 6 months)
+* [ ] Firefox (last 6 months)
+
+**Windows**
+
+* [ ] Chrome (last 6 months)
+* [ ] Firefox (last 6 months)
+* [ ] Edge 18 (last 6 months)
+
+**Mobile**
+
+* [ ] Safari (last 2 major versions)
+* [ ] Android (last 2 Android versions)
+* [ ] Samsung Browser (last year)
+* [ ] Chrome (last 6 months)
+* [ ] Firefox (last 6 months)
+
+#### Silver Level Support
+
+In these browsers, behavior & design are acceptable, but may not be as originally intended. A user is still able to access all content and functionality as described.
+
+* [ ] Android
+* [ ] Safari (last 4 major OS versions)
+* [ ] Edge 18
+* [ ] Samsung Browser (last 3 years)
+
+#### Bronze Level Support
+
+In these browsers, behavior & design may not be great, but the content doesn't appear "broken" to the user, either. All content is accessible, and functionality is as described. Additional testing may be required during implementation.
+
+* [ ] IE 11
+
+---
+
+### Changelog
+<!--
+This is a template to provide copy/paste-able changelog notes. Please delete irrelevant sections, fill in blanks with accurate info, and change links to point to relevant commits.
+-->
+
+#### Features ✨
+
+* [ ] [Add _____](link to commit/pr)
+
+#### Fixes 🚧
+
+* [ ] [Fix _____](link to commit/pr)
+
