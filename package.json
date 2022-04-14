@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "jest",
-    "lint": "run-s lint:scss",
+    "lint": "run-s lint:js lint:scss",
     "lint:js": "next lint",
     "lint:scss": "stylelint '**/*.scss'"
   },
