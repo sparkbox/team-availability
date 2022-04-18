@@ -11,6 +11,9 @@
     "lint:js": "next lint",
     "lint:scss": "stylelint '**/*.scss'"
   },
+  "engines" : {
+    "node": ">=16"
+  },
   "dependencies": {
     "next": "12.1.4",
     "react": "18.0.0",
