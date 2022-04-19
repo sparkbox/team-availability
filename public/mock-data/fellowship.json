@@ -1,0 +1,364 @@
+{
+  "0001": {
+    "firstName": "Aragorn II",
+    "lastName": "Elessar",
+    "nickname": "Strider",
+    "department": "production",
+    "jobTitle": "Technical Director",
+    "techLead": true,
+    "skillLevel": 4,
+    "active": true,
+    "cohortLeader": "fellowship",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [
+      "Apprenticeship"
+    ],
+    "discoveryLead": true,
+    "certifications": [
+      "CPWA",
+      "AWS"
+    ],
+    "bio": "He was Aragorn son of Arathorn, the nine and thirtieth heir in the right line from Isildur, and yet more like Elendil than any before him.",
+    "technologies": "JavaScript, Elvish",
+    "expertise": "Mentorship, swords, bows, horses",
+    "strengths": "Leading teams. Fighting monsters.",
+    "interests": "Camping every weekend, singing, playing guitar",
+    "currentProjects": [
+      "hobbits",
+      "one ring"
+    ],
+    "pastProjects": [
+      "war of the ring"
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 0
+  },
+  "0002": {
+    "firstName": "Gandalf",
+    "lastName": "the Grey",
+    "department": "production",
+    "jobTitle": "Project Manager",
+    "techLead": false,
+    "skillLevel": 3,
+    "active": true,
+    "cohortLeader": "wizards",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      "PMP",
+      "PSM"
+    ],
+    "bio": "A feature is never late, nor is it early–it arrives precisely when it means to.",
+    "technologies": "Jira, Trello, Basecamp",
+    "expertise": "Agile",
+    "strengths": "",
+    "interests": "Talking to animals, visiting old friends, reading",
+    "currentProjects": [
+      "hobbits",
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0003": {
+    "firstName": "Frodo",
+    "lastName": "Baggins",
+    "department": "production",
+    "jobTitle": "Developer",
+    "techLead": true,
+    "skillLevel": 2,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [],
+    "bio": "I will take the Ring, though I do not know the way.",
+    "technologies": "React, JavaScript, php, html, css",
+    "expertise": "CMS, APIs",
+    "strengths": "",
+    "interests": "Mountain climbing, horror films",
+    "currentProjects": [
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0004": {
+    "firstName": "Samwise",
+    "lastName": "Gamgee",
+    "department": "production",
+    "jobTitle": "Developer",
+    "techLead": false,
+    "skillLevel": 2,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      ""
+    ],
+    "bio": "",
+    "technologies": "React, Angular, Vue, Javascript, PHP, Ruby, HTML, JQuery, Go",
+    "expertise": "Microfrontends",
+    "strengths": "Keeping up team spirit",
+    "interests": "Gardening, taking care of my pets, hiking",
+    "currentProjects": [
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0005": {
+    "firstName": "Peregrin",
+    "lastName": "Took",
+    "nickname": "Pippin",
+    "department": "production",
+    "jobTitle": "Frontend Designer",
+    "techLead": false,
+    "skillLevel": 1,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [],
+    "bio": "",
+    "technologies": "HTML, CSS, SCSS, WCAG, some JavaScript",
+    "expertise": "Design Systems",
+    "strengths": "Wireframing",
+    "interests": "Choir, Scouts, reality TV",
+    "currentProjects": [
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0006": {
+    "firstName": "Meriadoc",
+    "lastName": "Brandybuck",
+    "nickname": "Merry",
+    "department": "production",
+    "jobTitle": "Developer",
+    "techLead": false,
+    "skillLevel": 1,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [],
+    "bio": "",
+    "technologies": "JS, HTML, CSS, Typescript",
+    "expertise": "",
+    "strengths": "Talking to clients",
+    "interests": "Craft beer, pyrotechnics, video editing",
+    "currentProjects": [
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0007": {
+    "firstName": "Legolas",
+    "lastName": "Greenleaf",
+    "department": "experience design",
+    "jobTitle": "UI Designer",
+    "techLead": false,
+    "skillLevel": 3,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      ""
+    ],
+    "bio": "",
+    "technologies": "Adobe suite, Sketch, Invision, Figma, some CSS, bows",
+    "expertise": "",
+    "strengths": "",
+    "interests": "Hair products, photography, snowboarding",
+    "currentProjects": [
+      "hobbits",
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0008": {
+    "firstName": "Gimli",
+    "lastName": "son of Glóin",
+    "nickname": "Elf-friend",
+    "department": "production",
+    "jobTitle": "Developer",
+    "techLead": true,
+    "skillLevel": 3,
+    "active": true,
+    "cohortLeader": null,
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      "CSM"
+    ],
+    "bio": "",
+    "technologies": "",
+    "expertise": "axes, php, agile, docker",
+    "strengths": "",
+    "interests": "Competitive sports, fantasy football",
+    "currentProjects": [
+      "hobbits",
+      "one ring"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0009": {
+    "firstName": "Boromir",
+    "lastName": "Gondor",
+    "department": "outreach",
+    "jobTitle": "Director of Business Development",
+    "techLead": false,
+    "skillLevel": 4,
+    "active": false,
+    "cohortLeader": "",
+    "cohortParticipant": "fellowship",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      ""
+    ],
+    "bio": "",
+    "technologies": "Mailchimp",
+    "expertise": "",
+    "strengths": "",
+    "interests": "",
+    "currentProjects": [],
+    "pastProjects": [
+      "one ring"
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 8
+  },
+  "0010": {
+    "firstName": "Arwen",
+    "lastName": "Undómiel",
+    "department": "experience design",
+    "jobTitle": "User Experience Strategist",
+    "techLead": false,
+    "skillLevel": 3,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "rivendell",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      ""
+    ],
+    "bio": "If you want him, come and claim him.",
+    "technologies": "Figma",
+    "expertise": "Usability testing, surveys, wireframing",
+    "strengths": "",
+    "interests": "Horses, city council, sailing",
+    "currentProjects": [
+      "hobbits"
+    ],
+    "pastProjects": [
+      ""
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 40
+  },
+  "0011": {
+    "firstName": "Éowyn",
+    "lastName": "",
+    "department": "production",
+    "jobTitle": "Developer",
+    "techLead": true,
+    "skillLevel": 2,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "rohan",
+    "internalResponsibility": [],
+    "discoveryLead": false,
+    "certifications": [
+      ""
+    ],
+    "bio": "No living man am I! You look upon a woman! Éowyn I am, Éomund's daughter. Begone if you be not deathless! For living or dark undead, I will smite you, if you touch him!",
+    "technologies": "JavaScript, HTML, CSS, Python",
+    "expertise": "",
+    "strengths": "",
+    "interests": "Cosplay, fencing, reading",
+    "currentProjects": [
+      "Riders of Rohan",
+      "Minas Tirith"
+    ],
+    "pastProjects": [
+      "hobbits"
+    ],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 0
+  },
+  "0012": {
+    "firstName": "Galadriel",
+    "lastName": "",
+    "department": "client success",
+    "jobTitle": "Projects Director",
+    "techLead": false,
+    "skillLevel": 4,
+    "active": true,
+    "cohortLeader": "",
+    "cohortParticipant": "",
+    "internalResponsibility": [
+      "Lunch N Learn"
+    ],
+    "discoveryLead": false,
+    "certifications": [],
+    "bio": "You will give me the Ring freely! In place of the Dark Lord you will set up a Queen. And I shall not be dark, but beautiful and terrible as the Morning and the Night! Fair as the Sea and the Sun and the Snow upon the Mountain! Dreadful as the Storm and the Lightning! Stronger than the foundations of the earth. All shall love me and despair!",
+    "technologies": "",
+    "expertise": "",
+    "strengths": "",
+    "interests": "Painting, beauty bloggers, handmade gifts for friends",
+    "currentProjects": [],
+    "pastProjects": [],
+    "photo": "url/",
+    "weeklyCapacity": 40,
+    "pto": 0
+  }
+}
+
