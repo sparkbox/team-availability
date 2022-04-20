@@ -1,29 +1,33 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
-
-import data from '../lib/data';
+import Link from 'next/link';
 
 export default function Home() {
-  const [roster, setRoster] = useState(null);
-  const [rosterIDs, setRosterIDs] = useState(null);
+  const [teamMembers, setTeamMembers] = useState(null);
+  const [teamMemberIds, setTeamMemberIds] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
+    const getAllTeamMembers = async (url) => {
+      const response = await fetch(url);
+      const data = await response.json();
 
-    data.fetchRoster()
-      .then((result) => {
-        setRoster(Object.values(result));
-        setRosterIDs(Object.keys(result));
+      setTeamMembers(Object.values(data));
+      setTeamMemberIds(Object.keys(data));
+    };
+
+    const getAndSetData = async () => {
+      try {
+        setIsLoading(true);
+        await getAllTeamMembers('api/fellowship/');
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         throw new Error(err);
-      });
-  }, []);
+      }
+    };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!roster) return <p>No team members could be found.</p>;
+    getAndSetData();
+  }, []);
 
   return (
     <div>
@@ -35,11 +39,21 @@ export default function Home() {
       <main>
         <h1>Week of April 18 to April 25, 2022</h1>
 
-        <ul>
-          {roster.map((member, idx) => (
-            <li key={rosterIDs[idx]}>{`${member.firstName}${member.lastName && ` ${member.lastName}`}`}</li>
-          ))}
-        </ul>
+        {isLoading && <p>Loading...</p>}
+
+        {!isLoading && !teamMembers && <p>No team members could be found.</p>}
+
+        {teamMembers && (
+          <ul>
+            {teamMembers.map((member, idx) => (
+              <li key={teamMemberIds[idx]}>
+                <Link href={`/${teamMemberIds[idx]}`}>
+                  {`${member.firstName}${member.lastName && ` ${member.lastName}`}`}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </main>
     </div>
   );

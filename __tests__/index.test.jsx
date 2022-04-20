@@ -2,26 +2,20 @@ import { render, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
 
 import Home from '../pages/index';
-import data from '../lib/data';
-
-jest.mock('../lib/data');
 
 describe('Home', () => {
   const MOCK_TEAM_MEMBERS = {
     '0001': { firstName: 'Aragorn II', lastName: 'Elessar' },
     '0002': { firstName: 'Gandalf', lastName: 'the Grey' },
   };
-  data.getAllTeamMembers.mockResolvedValue(MOCK_TEAM_MEMBERS);
 
-  it('calls data.getAllTeamMembers', async () => {
-    act(() => {
-      render(<Home />);
-    });
+  global.fetch = jest.fn(() => (
+    Promise.resolve({
+      json: () => Promise.resolve(MOCK_TEAM_MEMBERS),
+    })
+  ));
 
-    await waitFor(() => expect(data.fetchRoster).toHaveBeenCalled());
-  });
-
-  it('renders at least 1 li element', async () => {
+  it('renders the first li element', async () => {
     let container;
 
     act(() => {

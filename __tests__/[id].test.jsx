@@ -1,32 +1,27 @@
 import { render, waitFor } from '@testing-library/react';
+import { useRouter } from 'next/router';
 import { act } from 'react-dom/test-utils';
 
 import DetailPage from '../pages/[id]';
-import data from '../lib/data';
 
-jest.mock('next/router', () => ({
-  useRouter() {
-    return {
-      query: '{ id: 0001 }',
-    };
-  },
-}));
-
-jest.mock('../lib/data');
+jest.mock('next/router');
 
 describe('DetailPage', () => {
   const MOCK_TEAM_MEMBER = {
-    firstName: 'Aragorn II', lastName: 'Elessar',
+    '0001': { firstName: 'Aragorn II', lastName: 'Elessar' },
   };
-  data.getTeamMemberById.mockResolvedValue(MOCK_TEAM_MEMBER);
 
-  it('calls data.getTeamMembersById', async () => {
-    act(() => {
-      render(<DetailPage />);
-    });
+  useRouter.mockImplementation(() => (
+    {
+      query: { id: '0001' },
+    }
+  ));
 
-    await waitFor(() => expect(data.getTeamMemberById).toHaveBeenCalled());
-  });
+  global.fetch = jest.fn(() => (
+    Promise.resolve({
+      json: () => Promise.resolve(MOCK_TEAM_MEMBER),
+    })
+  ));
 
   it('renders the h1 element', async () => {
     let container;

@@ -2,40 +2,52 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
-import data from '../lib/data';
-
 export default function DetailPage() {
-  const [details, setDetails] = useState(null);
+  const [teamMemberDetails, setTeamMemberDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
-    setIsLoading(true);
+    const getTeamMemberById = async (url, identifier) => {
+      const response = await fetch(url + identifier);
+      const data = await response.json();
 
-    data.fetchDetails(id)
-      .then((result) => {
-        setDetails(result);
+      setTeamMemberDetails(data[identifier]);
+    };
+
+    const getAndSetData = async () => {
+      try {
+        setIsLoading(true);
+        await getTeamMemberById('api/fellowship/', id);
         setIsLoading(false);
-      })
-      .catch((err) => {
+      } catch (err) {
         throw new Error(err);
-      });
-  }, [id]);
+      }
+    };
 
-  if (isLoading) return <p>Loading...</p>;
-  if (!details) return <p>The team member could not be found.</p>;
+    getAndSetData();
+  }, [id]);
 
   return (
     <div>
-      <Head>
-        <title>{`${details.firstName} | Sparkbox Team Availability`}</title>
-        <meta name="description" content={`View details about ${details.firstName}, including their projects, skills, and interests.`} />
-      </Head>
+      {teamMemberDetails && (
+        <Head>
+          <title>{`${teamMemberDetails.firstName} | Sparkbox Team Availability`}</title>
+          <meta name="description" content={`View details about ${teamMemberDetails.firstName}, including their projects, skills, and interests.`} />
+        </Head>
+      )}
       <main>
-        <h1>
-          {`Greetings ${details.firstName}${details.lastName && ` ${details.lastName}`}!`}
-        </h1>
+
+        {isLoading && <p>Loading...</p>}
+
+        {!isLoading && !teamMemberDetails && <p>The team member could not be found.</p>}
+
+        {teamMemberDetails && (
+          <h1>
+            {`Greetings ${teamMemberDetails.firstName}${teamMemberDetails.lastName && ` ${teamMemberDetails.lastName}`}!`}
+          </h1>
+        )}
       </main>
     </div>
   );
