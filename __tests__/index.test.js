@@ -9,12 +9,4 @@ describe('Home', () => {
 
     expect(h1).toBeTruthy();
   });
-
-  it('renders four elements with the card class', () => {
-    const { container } = render(<Home />);
-
-    const cards = container.getElementsByClassName('card');
-
-    expect(cards.length).toBe(4);
-  });
 });
