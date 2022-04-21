@@ -1,3 +1,7 @@
-@function size($key) {
+@function stringify($value) {
+    @return $value+'';
+}
+
+@function font-size($key) {
     @return map-get($font-size, stringify($key));
 }
