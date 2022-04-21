@@ -1,0 +1,3 @@
+@function family($key) {
+    @return map-get($font-families, stringify($key));
+}
