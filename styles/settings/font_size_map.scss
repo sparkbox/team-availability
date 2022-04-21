@@ -1,24 +1,42 @@
-$font-size: ('sm': 0.875rem,
+// Font Size
+$font-size: ('3xs': 0.813rem,
+    '2xs': 0.875rem,
+    '1xs': 1rem,
+    'sm': 1.063rem,
     'md': 1.125rem,
-    'lg': 1.5rem) !default;
+    'lg': 1.5rem,
+    '1xl': 2rem,
+    '2xl': 2.5rem,
+    '3xl': 3rem,
+    'detail-page-name': 3.5rem);
 
 
-
-
+// Font Size (px)
+// $font-size-px: (
+//     '3xs': 13px,
+//     '2xs': 14px,
+//     '1xs': 16px,
+//     'sm': 17px,
+//     'md': 18px,
+//     'lg': 24px,
+//     '1xl': 32px,
+//     '2xl': 40px,
+//     '3xl': 48px,
+//     'detail-page-name': 56px);
 
 
 /*
 
 =====CAPSTONE HOME - GRID VIEW=====
 
-date/"Week of March 14 to March 21, 2022" - h1?
-48px;
+date/"Week of March 14 to March 21, 2022"
+48px
 
-names/"Jeremy Loyd" - h2?
+names/"Jeremy Loyd"
 32px
 
-results heading/"52 of 52 meet your criteria" - h3/4??
-24px;
+results heading/"52 of 52 meet your criteria"
+24px
 
 titles/"Creative Director" + upper-right corner/"Search by name"
 18px
@@ -40,7 +58,7 @@ names/"Natalie Lestini" + hrs/"21 hrs"
 
 all same, except:
 
-names/"Jeremy Loyd"- h2? 32px
+names/"Jeremy Loyd"
 56px
 
 titles/"Creative Director" + Headings ("Current Projects", "Skills", "About Jeremy", "Fun Facts", "Past Clients"
@@ -60,6 +78,43 @@ Location/"Dayton, OH" + small subheaders/"client, project, start, etc"
 
 =====AVAILABILITY DROPDOWN MENU=====
 
-...
+all dropdown options
+16px
+
+
+
+======================================
+=====all font variations combined=====
+======================================
+
+Location/"Dayton, OH"+small subheaders/"client, project, start, etc"
+13px
+
+Bottom buttons/"Htobert/ITW, Ozinga, etc"
+14px 
+
+dropdown menu/"all projects" + buttons + "Reset Filters"
+16px
+
+dropdown menu headings/"Project, Role, Availability"
+17px
+
+titles/"Creative Director" + upper-right corner/"Search by name"
+18px
+
+results heading/"52 of 52 meet your criteria"
+24px
+
+names/"Jeremy Loyd"
+32px
+
+names/"Natalie Lestini"+hrs/"21 hrs"
+40px
+
+date/"Week of March 14 to March 21, 2022"
+48px
+
+names/"Jeremy Loyd"
+56px
 
 */
