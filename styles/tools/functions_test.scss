@@ -1,0 +1,9 @@
+@import "node_modules/sass-true/sass/true";
+@import "./functions";
+@import "./../settings/colors";
+
+@include describe("color function") {
+  @include it("returns hex value from colors scss map") {
+    @include assert-equal(color(blue-100), #00abc5);
+  }
+}
