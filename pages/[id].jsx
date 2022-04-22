@@ -2,52 +2,56 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 
+import apiService from '../services/apiService';
+import LoadingStatus, { loadingStates } from '../components/LoadingStatus';
+
 export default function DetailPage() {
-  const [teamMemberDetails, setTeamMemberDetails] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [teamMemberDetails, setTeamMemberDetails] = useState({});
+  const [loadingStatus, setLoadingStatus] = useState(loadingStates.EMPTY);
   const router = useRouter();
   const { id } = router.query;
 
   useEffect(() => {
-    const getTeamMemberById = async (url, identifier) => {
-      const response = await fetch(url + identifier);
-      const data = await response.json();
-
-      setTeamMemberDetails(data[identifier]);
-    };
-
     const getAndSetData = async () => {
       try {
-        setIsLoading(true);
-        await getTeamMemberById('api/fellowship/', id);
-        setIsLoading(false);
+        setLoadingStatus(loadingStates.LOADING);
+        const fetchedTeamMember = await apiService.getTeamMemberById('api/fellowship/', id);
+        setTeamMemberDetails(fetchedTeamMember);
+        setLoadingStatus(loadingStates.LOADED);
       } catch (err) {
-        throw new Error(err);
+        setLoadingStatus(loadingStates.ERROR);
       }
     };
 
-    getAndSetData();
+    if (id) getAndSetData();
   }, [id]);
 
   return (
     <div>
-      {teamMemberDetails && (
-        <Head>
-          <title>{`${teamMemberDetails.firstName} | Sparkbox Team Availability`}</title>
-          <meta name="description" content={`View details about ${teamMemberDetails.firstName}, including their projects, skills, and interests.`} />
-        </Head>
-      )}
+      <Head>
+        <title>
+          {teamMemberDetails && teamMemberDetails.firstName}
+          {' '}
+          | Sparkbox Team Availability
+        </title>
+        <meta name="description" content={`View details about ${teamMemberDetails && teamMemberDetails.firstName}, including their projects, skills, and interests.`} />
+      </Head>
       <main>
 
-        {isLoading && <p>Loading...</p>}
+        <LoadingStatus
+          loadingStatus={loadingStatus}
+        />
 
-        {!isLoading && !teamMemberDetails && <p>The team member could not be found.</p>}
-
-        {teamMemberDetails && (
+        {loadingStatus === loadingStates.LOADED && (
           <h1>
-            {`Greetings ${teamMemberDetails.firstName}${teamMemberDetails.lastName && ` ${teamMemberDetails.lastName}`}!`}
+            Greetings
+            {' '}
+            {teamMemberDetails.firstName}
+            {teamMemberDetails.lastName && ` ${teamMemberDetails.lastName}`}
+            !
           </h1>
         )}
+
       </main>
     </div>
   );
