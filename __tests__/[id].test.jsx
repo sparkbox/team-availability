@@ -1,6 +1,6 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 import { useRouter } from 'next/router';
-import { act } from 'react-dom/test-utils';
 
 import DetailPage from '../pages/[id]';
 
@@ -23,13 +23,9 @@ describe('DetailPage', () => {
     })
   ));
 
-  it('renders the h1 element', async () => {
-    let container;
+  it('renders the expected test', async () => {
+    render(<DetailPage />);
 
-    act(() => {
-      container = render(<DetailPage />).container;
-    });
-
-    await waitFor(() => expect(container.querySelector('h1').textContent).toBe('Greetings Aragorn II Elessar!'));
+    await waitFor(() => expect(screen.getByText('Greetings Aragorn II Elessar!')).toBeInTheDocument());
   });
 });

@@ -1,5 +1,5 @@
-import { render, waitFor } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import { render, screen, waitFor } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
 
 import Home from '../pages/index';
 
@@ -15,13 +15,18 @@ describe('Home', () => {
     })
   ));
 
-  it('renders the first li element', async () => {
-    let container;
+  it('renders 2 li elements if 2 team members are fetched', async () => {
+    const { container } = render(<Home />);
 
-    act(() => {
-      container = render(<Home />).container;
+    await waitFor(() => expect(container.querySelectorAll('li').length).toBe(2));
+  });
+
+  it('renders the expected text', async () => {
+    render(<Home />);
+
+    await waitFor(() => {
+      expect(screen.getByText('Aragorn II Elessar')).toBeInTheDocument();
+      expect(screen.getByText('Gandalf the Grey')).toBeInTheDocument();
     });
-
-    await waitFor(() => expect(container.querySelector('li').textContent).toBe('Aragorn II Elessar'));
   });
 });
