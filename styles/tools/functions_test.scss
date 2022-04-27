@@ -1,9 +1,25 @@
 @import "node_modules/sass-true/sass/true";
 @import "./functions";
 @import "./../settings/colors";
+@import "./../settings/font_family_map";
+@import "./../settings/font_size_map";
 
 @include describe("color function") {
   @include it("returns hex value from colors scss map") {
     @include assert-equal(color(blue-100), #00abc5);
+  }
+}
+
+// @include describe("font-family function") {
+//   @include it("returns list of fonts from font-family scss map") {
+//     @include assert-equal(family(sans),
+//       blinkmacsystemfont);
+//   }
+// }
+
+@include describe("font-size function") {
+  @include it("returns rem value from font-size scss map") {
+    @include assert-equal(sm,
+      "1.063rem");
   }
 }
