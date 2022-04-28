@@ -1,0 +1,11 @@
+.cmp-skip-to-content {
+  @include visually-hidden;
+
+  &:focus {
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: auto;
+    height: auto;
+  }
+}

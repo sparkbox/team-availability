@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import apiService from '../services/apiService';
 import LoadingStatus, { loadingStates } from '../components/LoadingStatus';
+import SkipToContent from '../components/SkipToContent';
 
 export default function Home() {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -30,14 +31,14 @@ export default function Home() {
         <title>Sparkbox Team Availability</title>
         <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
       </Head>
+      <SkipToContent />
 
-      <main>
+      <main id="main-content">
         <h1>Week of April 18 to April 25, 2022</h1>
 
         <LoadingStatus
           loadingStatus={loadingStatus}
         />
-
         <ul>
           {loadingStatus === loadingStates.LOADED && teamMembers.map((member) => (
             <li key={member.id}>

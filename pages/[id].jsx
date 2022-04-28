@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import SkipToContent from '../components/SkipToContent';
 import apiService from '../services/apiService';
 
 export default function DetailPage({ fetchedTeamMember }) {
@@ -13,7 +13,9 @@ export default function DetailPage({ fetchedTeamMember }) {
         </title>
         <meta name="description" content={`View details about ${fetchedTeamMember && fetchedTeamMember.firstName}, including their projects, skills, and interests.`} />
       </Head>
-      <main>
+      <SkipToContent />
+
+      <main id="main-content">
         <h1>
           Greetings
           {' '}
