@@ -30,7 +30,7 @@
     "pastProjects": [
       "war of the ring"
     ],
-    "photo": "url/",
+    "photo": "/images/mock/aragorn.png",
     "weeklyCapacity": 40,
     "pto": 0
   },
@@ -62,7 +62,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/gandalf.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -90,7 +90,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/frodo.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -120,7 +120,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/sam.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -149,7 +149,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/pippin.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -178,7 +178,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/merry.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -209,7 +209,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/legolas.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -241,7 +241,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/gimli.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -269,7 +269,7 @@
     "pastProjects": [
       "one ring"
     ],
-    "photo": "url/",
+    "photo": "/images/mock/boromir.png",
     "weeklyCapacity": 40,
     "pto": 8
   },
@@ -299,7 +299,7 @@
     "pastProjects": [
       ""
     ],
-    "photo": "url/",
+    "photo": "/images/mock/arwen.png",
     "weeklyCapacity": 40,
     "pto": 40
   },
@@ -330,7 +330,7 @@
     "pastProjects": [
       "hobbits"
     ],
-    "photo": "url/",
+    "photo": "/images/mock/eowyn.png",
     "weeklyCapacity": 40,
     "pto": 0
   },
@@ -356,7 +356,7 @@
     "interests": "Painting, beauty bloggers, handmade gifts for friends",
     "currentProjects": [],
     "pastProjects": [],
-    "photo": "url/",
+    "photo": "/images/mock/galadriel.png",
     "weeklyCapacity": 40,
     "pto": 0
   }
