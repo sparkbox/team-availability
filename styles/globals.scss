@@ -52,7 +52,7 @@
 // 4. Elements
 //    Styling for bare HTML elements (like H1, A, etc.). These come with
 //    default styling from the browser so we can redefine them here.
-
+@import "./elements/root";
 @import "./elements/body";
 
 // =====================================================================
@@ -64,7 +64,6 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
-
 @import "./components/skip-to-content";
 
 // =====================================================================
