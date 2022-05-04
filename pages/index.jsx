@@ -19,7 +19,10 @@ export default function Home({ teamMembers }) {
         <ul>
           {teamMembers && teamMembers.map((member) => (
             <li key={member.id}>
-              <CardImage imageUrl={member.photo} />
+              
+              <div className="imageUrl-overlay">
+              <CardImage className="imageUrl" imageUrl={member.photo} />
+              </div>
               <Link href={`/${member.id}`}>
                 {getFullName(member)}
               </Link>

@@ -1,10 +1,8 @@
+// import $colors from 'styles/settings/_colors.scss';
+
 export default function CardImage({imageUrl}) {
   return (
-    <img src={imageUrl} />
+      <img className='imageStyle' src={imageUrl} />
   );
 }
-
-/*
-if member.photo === 0
-*/
 

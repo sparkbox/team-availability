@@ -55,10 +55,56 @@
 @import "./elements/root";
 @import "./elements/body";
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  display: block;
+  border-radius: 50%;
+  padding: 0;
+}
+
+a {
+  display: block;
+}
+
+li {
+  display: block;
+}
+
+ul {
+  display: inline-block;
+  list-style: none;
+  text-align: center;
+}
+
 // =====================================================================
 // 5. Objects
 //    Class-based selectors which define undecorated design patterns,
 //    for example media object known from OOCSS.
+
+  .imageUrl-overlay {
+    position: relative;
+    // display: flex;
+    display: inline-block; //fixed too-wide issue, only somewhat
+    max-width: 100%; //fixed some of them
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      
+      background-image: linear-gradient(to right, #46E6FF, #000000);
+      opacity: 80%;
+      border-radius: 50%;
+    }
+  }
+  
 
 // =====================================================================
 // 6. Components
