@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import SkipToContent from '../components/SkipToContent';
+import TradingCardImage from '../components/TradingCardImage';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 
@@ -25,6 +26,11 @@ export default function DetailPage({ fetchedTeamMember }) {
           {fullName}
           !
         </h1>
+
+        <TradingCardImage
+          imageUrl={fetchedTeamMember.photo}
+          hours={randomHours()}
+        />
       </main>
     </div>
   );

@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import CardImage from '../components/tradingCardImage';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 import SkipToContent from '../components/SkipToContent';
@@ -19,10 +18,6 @@ export default function Home({ teamMembers }) {
         <ul>
           {teamMembers && teamMembers.map((member) => (
             <li key={member.id}>
-              
-              <div className="imageUrl-overlay">
-              <CardImage className="imageUrl" imageUrl={member.photo} />
-              </div>
               <Link href={`/${member.id}`}>
                 {getFullName(member)}
               </Link>
