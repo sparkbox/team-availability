@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import getClassColorModifierString from '../util/getClassColorModifierString';
 
 export default function TradingCardImage({ imageUrl, hours }) {
@@ -6,18 +7,14 @@ export default function TradingCardImage({ imageUrl, hours }) {
   return (
     <div className="cmp-trading-card-image">
       <div className={`cmp-trading-card-image__overlay cmp-trading-card-image__overlay--${classColorModifier}`}>
-        <div
-          style={{
-            backgroundImage: `url(${imageUrl})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            backgroundBlendMode: 'overlay',
-          }}
-          className={`cmp-trading-card-image__image cmp-trading-card-image__image--${classColorModifier}`}
-          role="img"
-          title={imageUrl}
-        />
+        <div className={`cmp-trading-card-image__image cmp-trading-card-image__image--${classColorModifier}`}>
+          <Image
+            src={imageUrl}
+            height={350}
+            width={350}
+            alt={imageUrl}
+          />
+        </div>
       </div>
       <div className={`cmp-trading-card-image__hours-container cmp-trading-card-image__hours-container--${classColorModifier}`}>
         <span>

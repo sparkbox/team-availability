@@ -1,0 +1,135 @@
+.cmp-trading-card-image {
+  position: relative;
+  width: fit-content;
+
+  &__overlay {
+    position: relative;
+    height: 350px;
+    z-index: 30;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      content: "";
+      transition: opacity 125ms linear;
+    }
+
+    &--gray::after {
+      background-image:
+        linear-gradient(
+          90deg,
+          color("gray-200") -51%,
+          transparent 24%
+        );
+    }
+
+    &--blue::after {
+      background-image:
+        linear-gradient(
+          90deg,
+          color("blue-50-transparency-75") -15%,
+          color("blue-50-transparency-50") 21%,
+          transparent 66%
+        );
+    }
+
+    &--green::after {
+      background-image:
+        linear-gradient(
+          90deg,
+          color("green-50") 20%,
+          color("green-50-transparency-50") 81%,
+          transparent 171%
+        );
+    }
+  }
+
+  &__image {
+    position: relative;
+    height: 350px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 50;
+
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      content: "";
+      transition: opacity 125ms linear;
+    }
+
+    &--gray::after {
+      background-color: color("gray-200-transparency-50");
+    }
+
+    &--blue::after {
+      background-color: color("blue-100-transparency-50");
+    }
+
+    &--green::after {
+      background-color: color("green-100-transparency-50");
+    }
+  }
+
+  &__hours-container {
+    position: absolute;
+    right: 0;
+    bottom: space("lg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    font-weight: 700;
+    color: color("black");
+    transition: background-color 125ms linear;
+    z-index: 70;
+
+    &--gray {
+      background-color: color("gray-100");
+    }
+
+    &--blue {
+      background-color: color("blue-50");
+    }
+
+    &--green {
+      background-color: color("green-50");
+    }
+  }
+
+  &__hours {
+    font-size: font-size("xl");
+  }
+}
+
+.cmp-trading-card-image:hover .cmp-trading-card-image {
+  &__overlay {
+    &::after {
+      opacity: 0;
+    }
+  }
+
+  &__hours-container {
+    &--gray {
+      background-color: color("gray-200");
+    }
+
+    &--blue {
+      background-color: color("blue-100");
+    }
+
+    &--green {
+      background-color: color("green-100");
+    }
+  }
+}
