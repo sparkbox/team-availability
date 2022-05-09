@@ -29,7 +29,7 @@ export default function DetailPage({ fetchedTeamMember }) {
 
         <TradingCardImage
           imageUrl={fetchedTeamMember.photo}
-          hours={randomHours()}
+          hours={fetchedTeamMember.forecastedHours}
         />
       </main>
     </div>
