@@ -68,11 +68,12 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
+@import "./components/hours-bar";
 @import "./components/logo";
 @import "./components/skip-to-content";
-@import "./components/hours-bar";
-@import "./components/trading-card-image";
 @import "./components/trading-card";
+@import "./components/trading-card-grid";
+@import "./components/trading-card-image";
 
 // =====================================================================
 // 7. Vendors

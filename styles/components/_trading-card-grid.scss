@@ -1,0 +1,17 @@
+.cmp-trading-card-grid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  align-items: center;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 360px));
+  gap: space("xl") space("md");
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 450px;
+    border: 1px solid color("white");
+  }
+}
