@@ -7,6 +7,7 @@ import DetailPage, { getServerSideProps } from '../pages/[id]';
 const MOCK_TEAM_MEMBER = {
   firstName: 'Aragorn II',
   lastName: 'Elessar',
+  photo: '/images/mock/aragorn.png',
 };
 
 jest.mock('../services/apiService');
@@ -43,6 +44,7 @@ describe('getServerSideProps', () => {
           fetchedTeamMember: {
             firstName: 'Aragorn II',
             lastName: 'Elessar',
+            photo: '/images/mock/aragorn.png',
           },
         },
       }),
