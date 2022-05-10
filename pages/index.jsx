@@ -1,30 +1,9 @@
-import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-
 import apiService from '../services/apiService';
-import LoadingStatus, { loadingStates } from '../components/LoadingStatus';
 import SkipToContent from '../components/SkipToContent';
 
-export default function Home() {
-  const [teamMembers, setTeamMembers] = useState([]);
-  const [loadingStatus, setLoadingStatus] = useState(loadingStates.EMPTY);
-
-  useEffect(() => {
-    const getAndSetData = async () => {
-      try {
-        setLoadingStatus(loadingStates.LOADING);
-        const fetchedTeamMembers = await apiService.getAllTeamMembers('api/fellowship/');
-        setTeamMembers(fetchedTeamMembers);
-        setLoadingStatus(loadingStates.LOADED);
-      } catch (err) {
-        setLoadingStatus(loadingStates.ERROR);
-      }
-    };
-
-    getAndSetData();
-  }, []);
-
+export default function Home({ teamMembers }) {
   return (
     <div>
       <Head>
@@ -35,12 +14,8 @@ export default function Home() {
 
       <main id="main-content">
         <h1>Week of April 18 to April 25, 2022</h1>
-
-        <LoadingStatus
-          loadingStatus={loadingStatus}
-        />
         <ul>
-          {loadingStatus === loadingStates.LOADED && teamMembers.map((member) => (
+          {teamMembers && teamMembers.map((member) => (
             <li key={member.id}>
               <Link href={`/${member.id}`}>
                 {member.firstName + (member.lastName && ` ${member.lastName}`)}
@@ -51,4 +26,15 @@ export default function Home() {
       </main>
     </div>
   );
+}
+
+export async function getServerSideProps({ req }) {
+  const { host } = req.headers;
+  const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
+  const teamMembers = await apiService.getAllTeamMembers(`${scheme}${host}/api/fellowship/`);
+  return {
+    props: {
+      teamMembers,
+    },
+  };
 }
