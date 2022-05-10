@@ -31,7 +31,8 @@ export default function DetailPage({ fetchedTeamMember }) {
 export async function getServerSideProps({ params, req }) {
   const { id } = params;
   const { host } = req.headers;
-  const baseUrl = `http://${host}/api/fellowship/`;
+  const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
+  const baseUrl = `${scheme}${host}/api/fellowship/`;
   const fetchedTeamMember = await apiService.getTeamMemberById(baseUrl, id);
 
   if (!fetchedTeamMember) {
