@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import apiService from '../services/apiService';
+import getFullName from '../util/getFullName';
 import SkipToContent from '../components/SkipToContent';
 
 export default function Home({ teamMembers }) {
@@ -18,7 +19,7 @@ export default function Home({ teamMembers }) {
           {teamMembers && teamMembers.map((member) => (
             <li key={member.id}>
               <Link href={`/${member.id}`}>
-                {member.firstName + (member.lastName && ` ${member.lastName}`)}
+                {getFullName(member)}
               </Link>
             </li>
           ))}

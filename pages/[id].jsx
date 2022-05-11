@@ -1,17 +1,20 @@
 import Head from 'next/head';
 import SkipToContent from '../components/SkipToContent';
 import apiService from '../services/apiService';
+import getFullName from '../util/getFullName';
 
 export default function DetailPage({ fetchedTeamMember }) {
+  const fullName = getFullName(fetchedTeamMember);
+
   return (
     <div>
       <Head>
         <title>
-          {fetchedTeamMember.firstName}
+          {fullName}
           {' '}
           | Sparkbox Team Availability
         </title>
-        <meta name="description" content={`View details about ${fetchedTeamMember && fetchedTeamMember.firstName}, including their projects, skills, and interests.`} />
+        <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
       </Head>
       <SkipToContent />
 
@@ -19,8 +22,7 @@ export default function DetailPage({ fetchedTeamMember }) {
         <h1>
           Greetings
           {' '}
-          {fetchedTeamMember.firstName}
-          {fetchedTeamMember.lastName && ` ${fetchedTeamMember.lastName}`}
+          {fullName}
           !
         </h1>
       </main>
