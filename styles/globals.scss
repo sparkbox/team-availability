@@ -59,6 +59,7 @@
 // 5. Objects
 //    Class-based selectors which define undecorated design patterns,
 //    for example media object known from OOCSS.
+@import "./objects/layout";
 
 // =====================================================================
 // 6. Components
@@ -66,6 +67,7 @@
 //    and our UI components are often composed of Objects and Components
 @import "./components/skip-to-content";
 @import "./components/trading-card-image";
+@import "./components/logo";
 
 // =====================================================================
 // 7. Vendors

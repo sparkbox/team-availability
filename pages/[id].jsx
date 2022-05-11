@@ -1,14 +1,14 @@
 import Head from 'next/head';
-import SkipToContent from '../components/SkipToContent';
 import TradingCardImage from '../components/TradingCardImage';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
+import Layout from '../components/Layout';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const fullName = getFullName(fetchedTeamMember);
 
   return (
-    <div>
+    <Layout>
       <Head>
         <title>
           {fullName}
@@ -17,22 +17,18 @@ export default function DetailPage({ fetchedTeamMember }) {
         </title>
         <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
       </Head>
-      <SkipToContent />
+      <h1>
+        Greetings
+        {' '}
+        {fullName}
+        !
+      </h1>
 
-      <main id="main-content">
-        <h1>
-          Greetings
-          {' '}
-          {fullName}
-          !
-        </h1>
-
-        <TradingCardImage
-          imageUrl={fetchedTeamMember.photo}
-          hours={fetchedTeamMember.forecastedHours}
-        />
-      </main>
-    </div>
+      <TradingCardImage
+        imageUrl={fetchedTeamMember.photo}
+        hours={fetchedTeamMember.forecastedHours}
+      />
+    </Layout>
   );
 }
 

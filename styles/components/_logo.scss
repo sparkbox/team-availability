@@ -1,0 +1,26 @@
+.cmp-logo {
+  height: 2.75rem;
+
+  &__icon {
+    height: 100%;
+    color: color("white");
+  }
+
+  &__link {
+    display: inline-block;
+    height: 100%;
+  }
+
+  &__words {
+    height: 100%;
+    opacity: 0;
+
+    @media (min-width: 40rem) {
+      opacity: 1;
+    }
+  }
+
+  &__hidden-text {
+    @include visually-hidden;
+  }
+}
