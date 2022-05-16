@@ -1,10 +1,12 @@
 .cmp-trading-card-image {
+  $image-size: $trading-card-width;
+
+  width: $image-size;
   position: relative;
-  width: fit-content;
 
   &__overlay {
     position: relative;
-    height: 350px;
+    height: $image-size;
     z-index: 30;
 
     &::after {
@@ -50,7 +52,7 @@
 
   &__image {
     position: relative;
-    height: 350px;
+    height: $image-size;
     border-radius: 50%;
     overflow: hidden;
     z-index: 50;
@@ -86,8 +88,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6rem;
-    height: 6rem;
+    width: calc($image-size * 0.3);
+    height: calc($image-size * 0.3);
     border-radius: 50%;
     font-weight: 700;
     color: color("black");
