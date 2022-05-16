@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import apiService from '../services/apiService';
-import getFullName from '../util/getFullName';
 import Layout from '../components/Layout';
+import TradingCard from '../components/TradingCard';
+import getFullName from '../util/getFullName';
 
 export default function Home({ teamMembers }) {
   return (
@@ -15,11 +15,14 @@ export default function Home({ teamMembers }) {
       <ul>
         {teamMembers && teamMembers.map((member) => (
           <li key={member.id}>
-            <Link href={`/${member.id}`} passHref>
-              <a href="replace">
-                {getFullName(member)}
-              </a>
-            </Link>
+            <TradingCard
+              photo={member.photo}
+              weeklyCapacity={member.weeklyCapacity}
+              forecastedHours={member.forecastedHours}
+              name={getFullName(member)}
+              jobTitle={member.jobTitle}
+              id={member.id}
+            />
           </li>
         ))}
       </ul>

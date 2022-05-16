@@ -1,0 +1,24 @@
+.cmp-hours-bar {
+  $full-width: 100%;
+
+  --fill-ratio: 0;
+
+  background-color: color("gray-300");
+  overflow: hidden;
+  border-radius: 0.125rem;
+  height: 100%;
+  width: $full-width;
+
+  &__fill {
+    height: 100%;
+    width: calc(var(--fill-ratio) * $full-width);
+
+    &--fill-green {
+      background-color: color("green-50");
+    }
+
+    &--fill-blue {
+      background-color: color("blue-50");
+    }
+  }
+}

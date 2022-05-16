@@ -1,0 +1,32 @@
+.cmp-trading-card {
+  width: $trading-card-width;
+
+  &__hrs-bar {
+    margin-top: space("sm");
+    height: 0.375rem;
+    margin-bottom: 0;
+  }
+
+  &__name {
+    position: relative;
+    font-size: font-size("xl");
+    margin-bottom: 0;
+    font-weight: 500;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      bottom: 0;
+      height: calc(100% + $trading-card-width + space("sm") + 0.5rem);
+      width: $trading-card-width;
+      z-index: 99999;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: font-size("md");
+    font-weight: 300;
+  }
+}
