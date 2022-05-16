@@ -1,5 +1,6 @@
 .cmp-trading-card {
   width: $trading-card-width;
+  display: block;
 
   &__hrs-bar {
     margin-top: space("sm");
@@ -8,19 +9,14 @@
   }
 
   &__name {
-    position: relative;
+    display: inline-block;
     font-size: font-size("xl");
+    margin-top: space("sm");
     margin-bottom: 0;
     font-weight: 500;
 
-    &::after {
-      position: absolute;
-      content: "";
-      left: 0;
-      bottom: 0;
-      height: calc(100% + $trading-card-width + space("sm") + 0.5rem);
-      width: $trading-card-width;
-      z-index: 99999;
+    .cmp-trading-card:hover & {
+      text-decoration: underline;
     }
   }
 

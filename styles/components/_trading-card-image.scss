@@ -18,6 +18,10 @@
       border-radius: 50%;
       content: "";
       transition: opacity 125ms linear;
+
+      .cmp-trading-card:hover & {
+        opacity: 0;
+      }
     }
 
     &--gray::after {
@@ -98,40 +102,30 @@
 
     &--gray {
       background-color: color("gray-100");
+
+      .cmp-trading-card:hover & {
+        background-color: color("gray-200");
+      }
     }
 
     &--blue {
       background-color: color("blue-50");
+
+      .cmp-trading-card:hover & {
+        background-color: color("blue-100");
+      }
     }
 
     &--green {
       background-color: color("green-50");
+
+      .cmp-trading-card:hover & {
+        background-color: color("green-100");
+      }
     }
   }
 
   &__hours {
     font-size: font-size("xl");
-  }
-}
-
-.cmp-trading-card-image:hover .cmp-trading-card-image {
-  &__overlay {
-    &::after {
-      opacity: 0;
-    }
-  }
-
-  &__hours-container {
-    &--gray {
-      background-color: color("gray-200");
-    }
-
-    &--blue {
-      background-color: color("blue-100");
-    }
-
-    &--green {
-      background-color: color("green-100");
-    }
   }
 }
