@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import getClassColorModifierString from '../util/getClassColorModifierString';
 
-export default function TradingCardImage({ imageUrl, hours }) {
-  const classColorModifier = getClassColorModifierString(hours);
+export default function TradingCardImage({ imageUrl, weeklyCapacity, forecastedHours }) {
+  const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours);
 
   return (
     <div className="cmp-trading-card-image">
@@ -18,7 +18,7 @@ export default function TradingCardImage({ imageUrl, hours }) {
       </div>
       <div className={`cmp-trading-card-image__hours-container cmp-trading-card-image__hours-container--${classColorModifier}`}>
         <span>
-          <span className="cmp-trading-card-image__hours">{hours}</span>
+          <span className="cmp-trading-card-image__hours">{weeklyCapacity - forecastedHours}</span>
           {' '}
           hrs
         </span>

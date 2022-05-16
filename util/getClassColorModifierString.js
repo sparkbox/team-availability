@@ -1,5 +1,5 @@
-export default function getClassColorModifierString(availableHours) {
-  if (availableHours === 0) return 'gray';
-  if (availableHours >= 16) return 'green';
-  return 'blue';
+export default function getClassColorModifierString(weeklyCapacity, forecastedHours) {
+  if (weeklyCapacity - forecastedHours >= (weeklyCapacity/2)) return 'green';
+  if (weeklyCapacity - forecastedHours > 0) return 'blue';
+  return 'gray';
 }

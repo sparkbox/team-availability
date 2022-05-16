@@ -26,7 +26,8 @@ export default function DetailPage({ fetchedTeamMember }) {
 
       <TradingCardImage
         imageUrl={fetchedTeamMember.photo}
-        hours={fetchedTeamMember.forecastedHours}
+        forecastedHours={fetchedTeamMember.forecastedHours}
+        weeklyCapacity={fetchedTeamMember.weeklyCapacity}
       />
     </Layout>
   );
