@@ -3,13 +3,12 @@ import apiService from './apiService';
 
 const defaultFetchReference = global.fetch;
 describe('apiService', () => {
-
   describe('getAllTeamMembers', () => {
     beforeEach(() => {
       global.fetch = jest.fn(() => Promise.resolve({
         json: () => Promise.resolve(MOCK_DATA),
       }));
-     });
+    });
 
     afterEach(() => {
       global.fetch = defaultFetchReference;
@@ -40,17 +39,16 @@ describe('apiService', () => {
     });
 
     it('returns team member data that matches a given id', async () => {
-      const id =  Object.keys(MOCK_DATA)[0];
+      const id = Object.keys(MOCK_DATA)[0];
       const actual = await apiService.getTeamMemberById('url', id);
       expect(actual).toBe(MOCK_DATA[id]);
-    }); 
-  
-    // falsy value is required for [id].jsx 404 page redirect 
+    });
+
+    // falsy value is required for [id].jsx 404 page redirect
     it('returns falsy value if no team member is found', async () => {
-      const id =  'badid';
+      const id = 'badid';
       const actual = await apiService.getTeamMemberById('url', id);
       expect(actual).toBeFalsy();
     });
   });
-  
 });
