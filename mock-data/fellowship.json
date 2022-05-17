@@ -24,8 +24,18 @@
     "strengths": "Leading teams, Fighting monsters",
     "interests": "Camping every weekend, singing, playing guitar",
     "currentProjects": [
-      "hobbits",
-      "one ring"
+      {
+        "client": "Bilbo Baggins",
+        "project": "Hobbits",
+        "startDate": "2021-09-29",
+        "endDate": "2022-08-22"
+      },
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       "war of the ring"
@@ -57,8 +67,18 @@
     "strengths": "",
     "interests": "Talking to animals, visiting old friends, reading",
     "currentProjects": [
-      "hobbits",
-      "one ring"
+      {
+        "client": "Bilbo Baggins",
+        "project": "Hobbits",
+        "startDate": "2021-04-12",
+        "endDate": "2022-08-22"
+      },
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -87,7 +107,12 @@
     "strengths": "",
     "interests": "Mountain climbing, horror films",
     "currentProjects": [
-      "one ring"
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -118,7 +143,12 @@
     "strengths": "Keeping up team spirit",
     "interests": "Gardening, taking care of my pets, hiking",
     "currentProjects": [
-      "one ring"
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -148,7 +178,12 @@
     "strengths": "Wireframing",
     "interests": "Choir, Scouts, reality TV",
     "currentProjects": [
-      "one ring"
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -178,7 +213,12 @@
     "strengths": "Talking to clients",
     "interests": "Craft beer, pyrotechnics, video editing",
     "currentProjects": [
-      "one ring"
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -209,8 +249,18 @@
     "strengths": "",
     "interests": "Hair products, photography, snowboarding",
     "currentProjects": [
-      "hobbits",
-      "one ring"
+      {
+        "client": "Bilbo Baggins",
+        "project": "Hobbits",
+        "startDate": "2021-12-25",
+        "endDate": "2022-08-22"
+      },
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -242,8 +292,18 @@
     "strengths": "",
     "interests": "Competitive sports, fantasy football",
     "currentProjects": [
-      "hobbits",
-      "one ring"
+      {
+        "client": "Bilbo Baggins",
+        "project": "Hobbits",
+        "startDate": "2021-12-25",
+        "endDate": "2022-08-22"
+      },
+      {
+        "client": "The Council of Elrond",
+        "project": "One Ring",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -303,7 +363,12 @@
     "strengths": "",
     "interests": "Horses, city council, sailing",
     "currentProjects": [
-      "hobbits"
+      {
+        "client": "Bilbo Baggins",
+        "project": "Hobbits",
+        "startDate": "2021-10-25",
+        "endDate": "2022-08-22"
+      }
     ],
     "pastProjects": [
       ""
@@ -334,8 +399,18 @@
     "strengths": "",
     "interests": "Cosplay, fencing, reading",
     "currentProjects": [
-      "Riders of Rohan",
-      "Minas Tirith"
+      {
+        "client": "King Theoden",
+        "project": "Riders of Rohan",
+        "startDate": "2022-03-10",
+        "endDate": "2022-08-14"
+      },
+      {
+        "client": "Gondor",
+        "project": "Minas Tirith",
+        "startDate": "2022-03-15",
+        "endDate": "2022-05-08"
+      }
     ],
     "pastProjects": [
       "hobbits"
@@ -373,4 +448,3 @@
     "pto": 0
   }
 }
-
