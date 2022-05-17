@@ -1,0 +1,56 @@
+.cmp-current-projects {
+  box-sizing: border-box;
+  background-color: color("gray-400");
+  padding: space("2xl");
+  font-size: font-size("lg");
+
+  &__header {
+    margin: 0;
+    margin-bottom: space("lg");
+    font-family: font-family("sans-extended");
+    font-size: font-size("xl");
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  &__status {
+    font-weight: 200;
+  }
+
+  &__table {
+    width: calc(100% - space("lg"));
+    border-collapse: collapse;
+  }
+
+  &__table-header-row {
+    font-size: font-size("3xs");
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__table-header-cell {
+    padding-bottom: space("sm");
+  }
+
+  &__table-body-row {
+    border: solid;
+    border-width: 1px 0;
+    border-color: color("gray-200");
+    font-weight: 200;
+    letter-spacing: -0.02em;
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__table-body-cell {
+    padding: space("xs") 0;
+  }
+}
