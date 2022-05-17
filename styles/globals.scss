@@ -63,6 +63,7 @@
 //    Class-based selectors which define undecorated design patterns,
 //    for example media object known from OOCSS.
 @import "./objects/layout";
+@import "./objects/personal-overview";
 @import "./objects/skills-grid";
 
 // =====================================================================
@@ -73,6 +74,7 @@
 @import "./components/hours-bar";
 @import "./components/logo";
 @import "./components/personal-bio";
+@import "./components/personal-overview";
 @import "./components/skip-to-content";
 @import "./components/trading-card";
 @import "./components/trading-card-grid";

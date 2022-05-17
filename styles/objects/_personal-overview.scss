@@ -1,0 +1,11 @@
+.obj-personal-overview {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: $tablet-screen-width) {
+    justify-content: start;
+    flex-direction: row;
+  }
+}

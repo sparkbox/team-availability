@@ -2,6 +2,7 @@
   $image-size: $trading-card-width;
 
   width: $image-size;
+  order: 1;
   position: relative;
 
   &__overlay {

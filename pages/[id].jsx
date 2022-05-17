@@ -1,33 +1,41 @@
 import Head from 'next/head';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
+import getParticipantOrLeaderStatus from '../util/getParticipantOrLeaderStatus';
 import { getSkills } from '../util/getSkills';
 import { getPastClients } from '../util/getPastClients';
 import CurrentProjects from '../components/CurrentProjects';
 import Layout from '../components/Layout';
 import PersonalBio from '../components/PersonalBio';
+import PersonalOverview from '../components/PersonalOverview';
 import SkillsGrid from '../components/SkillsGrid';
 import TradingCardImage from '../components/TradingCardImage';
 import PastClients from '../components/PastClients';
 import Show from '../components/Show';
 
 export default function DetailPage({ fetchedTeamMember }) {
+  const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
   const fullName = getFullName(fetchedTeamMember);
   const skills = getSkills(fetchedTeamMember);
   const pastClients = getPastClients(fetchedTeamMember);
+
   return (
     <Layout>
       <Head>
         <title>{`${fullName} | Sparkbox Team Availability`}</title>
         <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
       </Head>
-      <h1>{`Greetings ${fullName}!`}</h1>
-
-      <TradingCardImage
-        imageUrl={fetchedTeamMember.photo}
-        forecastedHours={fetchedTeamMember.forecastedHours}
-        weeklyCapacity={fetchedTeamMember.weeklyCapacity}
-      />
+      <PersonalOverview
+        name={fullName}
+        jobTitle={fetchedTeamMember.jobTitle}
+        cohortStatus={cohortStatus}
+      >
+        <TradingCardImage
+          imageUrl={fetchedTeamMember.photo}
+          forecastedHours={fetchedTeamMember.forecastedHours}
+          weeklyCapacity={fetchedTeamMember.weeklyCapacity}
+        />
+      </PersonalOverview>
 
       <CurrentProjects
         currentProjects={fetchedTeamMember.currentProjects}

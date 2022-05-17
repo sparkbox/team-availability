@@ -1,0 +1,31 @@
+.cmp-personal-overview {
+  line-height: 1.2;
+  order: 2;
+  text-align: left;
+
+  @media (min-width: $tablet-screen-width) {
+    margin-left: space("personal-overview-margin");
+  }
+
+  &__name {
+    font-family: font-family("sans-extended");
+    font-size: font-size("detail-page-name");
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin: space("sm") 0;
+  }
+
+  &__title,
+  &__cohort {
+    margin: space("xs") 0;
+  }
+
+  &__title {
+    font-size: font-size("xl");
+  }
+
+  &__cohort {
+    font-size: font-size("lg");
+    text-transform: capitalize;
+  }
+}
