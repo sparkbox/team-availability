@@ -1,0 +1,9 @@
+.cmp-trading-card-grid {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  align-items: start;
+  justify-content: space-around;
+  grid-template-columns: repeat(auto-fill, $trading-card-width);
+  gap: space("xl") space("md");
+}
