@@ -1,34 +1,28 @@
 import Head from 'next/head';
+import Layout from '../components/Layout';
 import TradingCardImage from '../components/TradingCardImage';
+import SkillsGrid from '../components/SkillsGrid';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
-import Layout from '../components/Layout';
+import { getSkills } from '../util/getSkills';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const fullName = getFullName(fetchedTeamMember);
-
+  const skills = getSkills(fetchedTeamMember);
   return (
     <Layout>
       <Head>
-        <title>
-          {fullName}
-          {' '}
-          | Sparkbox Team Availability
-        </title>
+        <title>{`${fullName} | Sparkbox Team Availability`}</title>
         <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
       </Head>
-      <h1>
-        Greetings
-        {' '}
-        {fullName}
-        !
-      </h1>
+      <h1>{`Greetings ${fullName}!`}</h1>
 
       <TradingCardImage
         imageUrl={fetchedTeamMember.photo}
         forecastedHours={fetchedTeamMember.forecastedHours}
         weeklyCapacity={fetchedTeamMember.weeklyCapacity}
       />
+      <SkillsGrid skilldata={skills} />
     </Layout>
   );
 }

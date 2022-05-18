@@ -13,6 +13,8 @@ export default function Document() {
         <link href="/favicon/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png" />
         <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#000000" />
         <link rel="stylesheet" href="https://assets.sparkbox.com/fonts/sole/sole-sans-regular/font.css" />
+        <link rel="stylesheet" href="https://assets.sparkbox.com/fonts/sole/sole-sans-light/font.css" />
+        <link rel="stylesheet" href="https://assets.sparkbox.com/fonts/sole/sole-sans-semi-bold-extended/font.css" />
         <meta name="msapplication-TileColor" content="#0a0a0a" />
         <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       </Head>

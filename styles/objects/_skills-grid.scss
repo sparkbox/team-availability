@@ -1,0 +1,5 @@
+.obj-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 10rem);
+  column-gap: space("md");
+}
