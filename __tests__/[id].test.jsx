@@ -8,6 +8,7 @@ const MOCK_TEAM_MEMBER = {
   firstName: 'Aragorn II',
   lastName: 'Elessar',
   photo: '/images/mock/aragorn.png',
+  currentProjects: [],
 };
 
 jest.mock('../services/apiService');
@@ -45,6 +46,7 @@ describe('getServerSideProps', () => {
             firstName: 'Aragorn II',
             lastName: 'Elessar',
             photo: '/images/mock/aragorn.png',
+            currentProjects: [],
           },
         },
       }),
