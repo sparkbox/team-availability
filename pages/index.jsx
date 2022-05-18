@@ -1,8 +1,7 @@
 import Head from 'next/head';
 import apiService from '../services/apiService';
 import Layout from '../components/Layout';
-import TradingCard from '../components/TradingCard';
-import getFullName from '../util/getFullName';
+import TradingCardGrid from '../components/TradingCardGrid';
 
 export default function Home({ teamMembers }) {
   return (
@@ -12,20 +11,10 @@ export default function Home({ teamMembers }) {
         <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
       </Head>
       <h1>Week of April 18 to April 25, 2022</h1>
-      <ul>
-        {teamMembers && teamMembers.map((member) => (
-          <li key={member.id}>
-            <TradingCard
-              photo={member.photo}
-              weeklyCapacity={member.weeklyCapacity}
-              forecastedHours={member.forecastedHours}
-              name={getFullName(member)}
-              jobTitle={member.jobTitle}
-              id={member.id}
-            />
-          </li>
-        ))}
-      </ul>
+
+      <TradingCardGrid
+        teamMembers={teamMembers}
+      />
     </Layout>
   );
 }

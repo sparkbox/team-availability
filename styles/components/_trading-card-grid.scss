@@ -4,14 +4,6 @@
   display: grid;
   align-items: center;
   justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, minmax(18rem, 360px));
+  grid-template-columns: repeat(auto-fill, $trading-card-width);
   gap: space("xl") space("md");
-
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 450px;
-    border: 1px solid color("white");
-  }
 }

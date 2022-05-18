@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import getFullName from '../util/getFullName';
+import TradingCard from './TradingCard';
 
 export default function TradingCardGrid({ teamMembers }) {
   return (
@@ -7,13 +7,15 @@ export default function TradingCardGrid({ teamMembers }) {
       {teamMembers.map((member) => (
         <article
           key={member.id}
-          className="cmp-trading-card-grid__item"
         >
-          <Link href={`/${member.id}`} passHref>
-            <a href="replace">
-              {getFullName(member)}
-            </a>
-          </Link>
+          <TradingCard
+            photo={member.photo}
+            weeklyCapacity={member.weeklyCapacity}
+            forecastedHours={member.forecastedHours}
+            name={getFullName(member)}
+            jobTitle={member.jobTitle}
+            id={member.id}
+          />
         </article>
       ))}
     </div>
