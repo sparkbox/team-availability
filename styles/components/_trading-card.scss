@@ -1,0 +1,28 @@
+.cmp-trading-card {
+  width: $trading-card-width;
+  display: block;
+
+  &__hrs-bar {
+    margin-top: space("sm");
+    height: 0.375rem;
+    margin-bottom: 0;
+  }
+
+  &__name {
+    display: inline-block;
+    font-size: font-size("xl");
+    margin-top: space("sm");
+    margin-bottom: 0;
+    font-weight: 500;
+
+    .cmp-trading-card:hover & {
+      text-decoration: underline;
+    }
+  }
+
+  &__title {
+    margin-top: 0;
+    font-size: font-size("md");
+    font-weight: 300;
+  }
+}

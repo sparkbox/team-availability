@@ -1,10 +1,12 @@
 .cmp-trading-card-image {
+  $image-size: $trading-card-width;
+
+  width: $image-size;
   position: relative;
-  width: fit-content;
 
   &__overlay {
     position: relative;
-    height: 350px;
+    height: $image-size;
     z-index: 30;
 
     &::after {
@@ -16,6 +18,10 @@
       border-radius: 50%;
       content: "";
       transition: opacity 125ms linear;
+
+      .cmp-trading-card:hover & {
+        opacity: 0;
+      }
     }
 
     &--gray::after {
@@ -50,7 +56,7 @@
 
   &__image {
     position: relative;
-    height: 350px;
+    height: $image-size;
     border-radius: 50%;
     overflow: hidden;
     z-index: 50;
@@ -86,8 +92,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 6rem;
-    height: 6rem;
+    width: calc($image-size * 0.3);
+    height: calc($image-size * 0.3);
     border-radius: 50%;
     font-weight: 700;
     color: color("black");
@@ -96,40 +102,30 @@
 
     &--gray {
       background-color: color("gray-100");
+
+      .cmp-trading-card:hover & {
+        background-color: color("gray-200");
+      }
     }
 
     &--blue {
       background-color: color("blue-50");
+
+      .cmp-trading-card:hover & {
+        background-color: color("blue-100");
+      }
     }
 
     &--green {
       background-color: color("green-50");
+
+      .cmp-trading-card:hover & {
+        background-color: color("green-100");
+      }
     }
   }
 
   &__hours {
     font-size: font-size("xl");
-  }
-}
-
-.cmp-trading-card-image:hover .cmp-trading-card-image {
-  &__overlay {
-    &::after {
-      opacity: 0;
-    }
-  }
-
-  &__hours-container {
-    &--gray {
-      background-color: color("gray-200");
-    }
-
-    &--blue {
-      background-color: color("blue-100");
-    }
-
-    &--green {
-      background-color: color("green-100");
-    }
   }
 }

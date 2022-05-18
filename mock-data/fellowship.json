@@ -31,7 +31,7 @@
       "war of the ring"
     ],
     "photo": "/images/mock/aragorn.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 30,
     "pto": 0
   },
@@ -64,7 +64,7 @@
       ""
     ],
     "photo": "/images/mock/gandalf.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 21,
     "pto": 8
   },
@@ -93,7 +93,7 @@
       ""
     ],
     "photo": "/images/mock/frodo.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 3,
     "pto": 8
   },
@@ -124,7 +124,7 @@
       ""
     ],
     "photo": "/images/mock/sam.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 18,
     "pto": 8
   },
@@ -154,7 +154,7 @@
       ""
     ],
     "photo": "/images/mock/pippin.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 12,
     "pto": 8
   },
@@ -184,8 +184,8 @@
       ""
     ],
     "photo": "/images/mock/merry.png",
-    "weeklyCapacity": 40,
-    "forecastedHours": 0,
+    "weeklyCapacity": 32,
+    "forecastedHours": 32,
     "pto": 8
   },
   "0007": {
@@ -216,7 +216,7 @@
       ""
     ],
     "photo": "/images/mock/legolas.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 9,
     "pto": 8
   },
@@ -249,7 +249,7 @@
       ""
     ],
     "photo": "/images/mock/gimli.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 24,
     "pto": 8
   },
@@ -278,7 +278,7 @@
       "one ring"
     ],
     "photo": "/images/mock/boromir.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 0,
     "pto": 8
   },
@@ -309,7 +309,7 @@
       ""
     ],
     "photo": "/images/mock/arwen.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 12,
     "pto": 40
   },
@@ -341,7 +341,7 @@
       "hobbits"
     ],
     "photo": "/images/mock/eowyn.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 27,
     "pto": 0
   },
@@ -368,7 +368,7 @@
     "currentProjects": [],
     "pastProjects": [],
     "photo": "/images/mock/galadriel.png",
-    "weeklyCapacity": 40,
+    "weeklyCapacity": 32,
     "forecastedHours": 15,
     "pto": 0
   }

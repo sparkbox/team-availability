@@ -32,6 +32,7 @@
 @import "./settings/font-families";
 @import "./settings/font-sizes";
 @import "./settings/spacing";
+@import "./settings/variables";
 
 // =====================================================================
 // 2. Tools
@@ -54,6 +55,8 @@
 //    default styling from the browser so we can redefine them here.
 @import "./elements/root";
 @import "./elements/body";
+@import "./elements/a";
+@import "./elements/ul";
 
 // =====================================================================
 // 5. Objects
@@ -65,9 +68,11 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
-@import "./components/skip-to-content";
-@import "./components/trading-card-image";
 @import "./components/logo";
+@import "./components/skip-to-content";
+@import "./components/hours-bar";
+@import "./components/trading-card-image";
+@import "./components/trading-card";
 
 // =====================================================================
 // 7. Vendors
