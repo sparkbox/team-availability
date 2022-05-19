@@ -4,6 +4,7 @@ import getFullName from '../util/getFullName';
 import { getSkills } from '../util/getSkills';
 import CurrentProjects from '../components/CurrentProjects';
 import Layout from '../components/Layout';
+import PersonalBio from '../components/PersonalBio';
 import SkillsGrid from '../components/SkillsGrid';
 import TradingCardImage from '../components/TradingCardImage';
 
@@ -29,6 +30,11 @@ export default function DetailPage({ fetchedTeamMember }) {
       />
 
       <SkillsGrid skilldata={skills} />
+
+      <PersonalBio
+        name={fetchedTeamMember.firstName}
+        bio={fetchedTeamMember.bio}
+      />
     </Layout>
   );
 }
