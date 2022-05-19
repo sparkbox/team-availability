@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-
 import apiService from '../services/apiService';
 import DetailPage, { getServerSideProps } from '../pages/[id]';
 
@@ -9,6 +8,9 @@ const MOCK_TEAM_MEMBER = {
   lastName: 'Elessar',
   photo: '/images/mock/aragorn.png',
   currentProjects: [],
+  pastProjects: [""],
+  weeklyCapacity: 32,
+  forecastedHours: 32,         
 };
 
 jest.mock('../services/apiService');
@@ -47,6 +49,9 @@ describe('getServerSideProps', () => {
             lastName: 'Elessar',
             photo: '/images/mock/aragorn.png',
             currentProjects: [],
+            pastProjects: [""],
+            weeklyCapacity: 32,
+            forecastedHours: 32,         
           },
         },
       }),
