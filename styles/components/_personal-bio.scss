@@ -2,34 +2,22 @@
   $full-width: 100%;
   $header-line-height: 39px;
   $content-line-height: 29px;
-  $mobile-screen-width: 40rem;
 
   letter-spacing: -0.02em;
   width: 100%;
 
   &__header {
     font-family: font-family("sans-extended");
-    font-size: font-size("lg");
+    font-size: font-size("xl");
     font-weight: 600;
-    line-height: calc($header-line-height / 2);
+    line-height: $header-line-height;
     margin: 0;
-    margin-bottom: space("md");
-
-    @media (min-width: $mobile-screen-width) {
-      font-size: font-size("xl");
-      line-height: $header-line-height;
-      margin-bottom: space("lg");
-    }
+    margin-bottom: space("lg");
   }
 
   &__content {
-    font-size: font-size("md");
+    font-size: font-size("lg");
     line-height: $content-line-height;
-    margin: space("sm") 0;
-
-    @media (min-width: $mobile-screen-width) {
-      font-size: font-size("lg");
-      margin: space("xs") 0;
-    }
+    margin: space("xs") 0;
   }
 }
