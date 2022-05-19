@@ -1,10 +1,11 @@
 import Head from 'next/head';
-import Layout from '../components/Layout';
-import TradingCardImage from '../components/TradingCardImage';
-import SkillsGrid from '../components/SkillsGrid';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 import { getSkills } from '../util/getSkills';
+import CurrentProjects from '../components/CurrentProjects';
+import Layout from '../components/Layout';
+import SkillsGrid from '../components/SkillsGrid';
+import TradingCardImage from '../components/TradingCardImage';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const fullName = getFullName(fetchedTeamMember);
@@ -22,6 +23,11 @@ export default function DetailPage({ fetchedTeamMember }) {
         forecastedHours={fetchedTeamMember.forecastedHours}
         weeklyCapacity={fetchedTeamMember.weeklyCapacity}
       />
+
+      <CurrentProjects
+        currentProjects={fetchedTeamMember.currentProjects}
+      />
+
       <SkillsGrid skilldata={skills} />
     </Layout>
   );

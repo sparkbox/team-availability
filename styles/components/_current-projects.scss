@@ -1,0 +1,155 @@
+.cmp-current-projects {
+  $full-width: 100%;
+  $font-weight-light: 200;
+  $font-weight-regular: 400;
+  $font-weight-semibold: 600;
+  $mobile-screen-width: 40rem;
+  $tablet-screen-width: 60rem;
+
+  background-color: color("gray-400");
+  box-sizing: border-box;
+  font-size: font-size("lg");
+  padding: space("2xl");
+
+  &__header {
+    display: block;
+    font-family: font-family("sans-extended");
+    font-size: font-size("xl");
+    font-weight: $font-weight-semibold;
+    margin: 0;
+    margin-bottom: space("lg");
+    letter-spacing: -0.02em;
+    text-align: left;
+
+    &--caption {
+      @media (min-width: $tablet-screen-width) {
+        display: revert;
+      }
+    }
+  }
+
+  &__status {
+    font-weight: $font-weight-light;
+  }
+
+  &__table {
+    border-collapse: collapse;
+    display: block;
+    width: $full-width;
+
+    @media (min-width: $tablet-screen-width) {
+      display: revert;
+      width: calc($full-width - space("lg"));
+    }
+  }
+
+  &__table-head {
+    display: none;
+
+    @media (min-width: $tablet-screen-width) {
+      display: revert;
+    }
+  }
+
+  &__table-header-row {
+    font-size: font-size("3xs");
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__table-header-cell {
+    display: block;
+
+    @media (min-width: $tablet-screen-width) {
+      display: revert;
+      padding-bottom: space("sm");
+    }
+  }
+
+  &__table-body {
+    display: block;
+
+    @media (min-width: $tablet-screen-width) {
+      display: revert;
+    }
+  }
+
+  &__table-body-row {
+    display: block;
+    letter-spacing: -0.02em;
+    font-weight: $font-weight-light;
+
+    @media (min-width: $tablet-screen-width) {
+      border: solid;
+      border-width: 1px 0;
+      border-color: color("gray-200");
+      display: revert;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  /* stylelint-disable selector-class-pattern */
+  &__table-body > .cmp-current-projects__table-body-row + .cmp-current-projects__table-body-row {
+    margin-top: space("sm");
+
+    @media (min-width: $tablet-screen-width) {
+      margin-top: unset;
+    }
+  }
+  /* stylelint-enable selector-class-pattern */
+
+  &__table-body-cell,
+  &__table-body-cell-header {
+    display: block;
+
+    @media (min-width: $tablet-screen-width) {
+      display: revert;
+      padding: space("xs") 0;
+    }
+  }
+
+  &__table-body-cell {
+    font-size: font-size("md");
+    padding: space("2xs") 0;
+
+    @media (min-width: $tablet-screen-width) {
+      font-size: font-size("lg");
+      padding: space("xs") 0;
+    }
+  }
+
+  &__table-body-cell-header {
+    border-bottom: 1px solid color("gray-200");
+    font-size: font-size("lg");
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-transform: uppercase;
+
+    @media (min-width: $tablet-screen-width) {
+      border: none;
+      font-size: font-size("lg");
+      font-weight: $font-weight-light;
+      letter-spacing: unset;
+      text-transform: unset;
+    }
+  }
+
+  &__label {
+    display: inline;
+    font-weight: $font-weight-regular;
+
+    @media (min-width: $tablet-screen-width) {
+      display: none;
+    }
+  }
+}
