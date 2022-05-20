@@ -1,10 +1,15 @@
 .cmp-skills-grid {
+  background-color: color("gray-400");
+  box-sizing: border-box;
+  padding: space("2xl");
   width: 100%;
 
   &__heading {
     font-size: font-size("xl");
     font-family: font-family("sans-extended");
     font-weight: 600;
+    margin: 0;
+    margin-bottom: space("lg");
   }
 
   &__category {
