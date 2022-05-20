@@ -1,0 +1,25 @@
+.cmp-past-clients {
+  width: 100%;
+
+  &__heading {
+    font-family: font-family("sans-extended");
+    font-size: font-size("xl");
+    font-weight: 600;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+  }
+
+  &__client {
+    border: 1px color("white") solid;
+    display: inline;
+    font-size: font-size("md");
+    font-weight: 300;
+    margin-right: space("sm");
+    padding: space("xs");
+    text-transform: capitalize;
+  }
+}

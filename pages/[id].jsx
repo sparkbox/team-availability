@@ -2,15 +2,19 @@ import Head from 'next/head';
 import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 import { getSkills } from '../util/getSkills';
+import { getPastClients } from '../util/getPastClients';
 import CurrentProjects from '../components/CurrentProjects';
 import Layout from '../components/Layout';
 import PersonalBio from '../components/PersonalBio';
 import SkillsGrid from '../components/SkillsGrid';
 import TradingCardImage from '../components/TradingCardImage';
+import PastClients from '../components/PastClients';
+import Show from '../components/Show';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const fullName = getFullName(fetchedTeamMember);
   const skills = getSkills(fetchedTeamMember);
+  const pastClients = getPastClients(fetchedTeamMember);
   return (
     <Layout>
       <Head>
@@ -35,6 +39,9 @@ export default function DetailPage({ fetchedTeamMember }) {
         name={fetchedTeamMember.firstName}
         bio={fetchedTeamMember.bio}
       />
+      <Show when={pastClients}>
+        <PastClients pastClients={pastClients} />
+      </Show>
     </Layout>
   );
 }
