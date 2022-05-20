@@ -8,9 +8,11 @@ const MOCK_TEAM_MEMBER = {
   lastName: 'Elessar',
   photo: '/images/mock/aragorn.png',
   currentProjects: [],
-  pastProjects: [""],
+  pastProjects: [''],
   weeklyCapacity: 32,
-  forecastedHours: 32,         
+  forecastedHours: 11,
+  cohortLeader: 'fellowship',
+  cohortParticipant: 'fellowship',
 };
 
 jest.mock('../services/apiService');
@@ -23,7 +25,7 @@ describe('DetailPage', () => {
       <DetailPage fetchedTeamMember={MOCK_TEAM_MEMBER} />,
     );
 
-    await waitFor(() => expect(screen.getByText('Greetings Aragorn II Elessar!')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Aragorn II Elessar')).toBeInTheDocument());
   });
 });
 
@@ -49,9 +51,11 @@ describe('getServerSideProps', () => {
             lastName: 'Elessar',
             photo: '/images/mock/aragorn.png',
             currentProjects: [],
-            pastProjects: [""],
+            pastProjects: [''],
             weeklyCapacity: 32,
-            forecastedHours: 32,         
+            forecastedHours: 11,
+            cohortLeader: 'fellowship',
+            cohortParticipant: 'fellowship',
           },
         },
       }),
