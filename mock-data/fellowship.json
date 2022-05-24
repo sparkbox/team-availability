@@ -20,6 +20,10 @@
       "AWS"
     ],
     "bio": "He was Aragorn son of Arathorn, the nine and thirtieth heir in the right line from Isildur, and yet more like Elendil than any before him.",
+    "funFacts": [
+      "Raised in Rivendell by Elrond",
+      "Sometimes goes by Strider"
+    ],
     "technologies": "JavaScript, Elvish",
     "expertise": "Mentorship, swords, bows, horses",
     "strengths": "Leading teams, Fighting monsters",
@@ -65,6 +69,9 @@
       "PSM"
     ],
     "bio": "A feature is never late, nor is it early–it arrives precisely when it means to.",
+    "funFacts": [
+      "Owns a horse named Shadowfax"
+    ],
     "technologies": "Jira, Trello, Basecamp",
     "expertise": "Agile",
     "strengths": "",
@@ -107,6 +114,7 @@
     "discoveryLead": false,
     "certifications": [],
     "bio": "I will take the Ring, though I do not know the way.",
+    "funFacts": [],
     "technologies": "React, JavaScript, php, html, css",
     "expertise": "CMS, APIs",
     "strengths": "",
@@ -144,6 +152,7 @@
       ""
     ],
     "bio": "",
+    "funFacts": [],
     "technologies": "React, Angular, Vue, Javascript, PHP, Ruby, HTML, JQuery, Go",
     "expertise": "Microfrontends",
     "strengths": "Keeping up team spirit",
@@ -180,6 +189,7 @@
     "discoveryLead": false,
     "certifications": [],
     "bio": "",
+    "funFacts": [],
     "technologies": "HTML, CSS, SCSS, WCAG, some JavaScript",
     "expertise": "Design Systems",
     "strengths": "Wireframing",
@@ -216,6 +226,7 @@
     "discoveryLead": false,
     "certifications": [],
     "bio": "",
+    "funFacts": [],
     "technologies": "JS, HTML, CSS, Typescript",
     "expertise": "",
     "strengths": "Talking to clients",
@@ -253,6 +264,7 @@
       ""
     ],
     "bio": "",
+    "funFacts": [],
     "technologies": "Adobe suite, Sketch, Invision, Figma, some CSS, bows",
     "expertise": "",
     "strengths": "",
@@ -297,6 +309,7 @@
       "CSM"
     ],
     "bio": "",
+    "funFacts": [],
     "technologies": "",
     "expertise": "axes, php, agile, docker",
     "strengths": "",
@@ -340,6 +353,7 @@
       ""
     ],
     "bio": "",
+    "funFacts": [],
     "technologies": "Mailchimp",
     "expertise": "",
     "strengths": "",
@@ -370,6 +384,7 @@
       ""
     ],
     "bio": "If you want him, come and claim him.",
+    "funFacts": [],
     "technologies": "Figma",
     "expertise": "Usability testing, surveys, wireframing",
     "strengths": "",
@@ -407,6 +422,7 @@
       ""
     ],
     "bio": "No living man am I! You look upon a woman! Éowyn I am, Éomund's daughter. Begone if you be not deathless! For living or dark undead, I will smite you, if you touch him!",
+    "funFacts": [],
     "technologies": "JavaScript, HTML, CSS, Python",
     "expertise": "",
     "strengths": "",
@@ -450,6 +466,7 @@
     "discoveryLead": false,
     "certifications": [],
     "bio": "You will give me the Ring freely! In place of the Dark Lord you will set up a Queen. And I shall not be dark, but beautiful and terrible as the Morning and the Night! Fair as the Sea and the Sun and the Snow upon the Mountain! Dreadful as the Storm and the Lightning! Stronger than the foundations of the earth. All shall love me and despair!",
+    "funFacts": [],
     "technologies": "",
     "expertise": "",
     "strengths": "",

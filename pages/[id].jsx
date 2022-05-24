@@ -12,6 +12,7 @@ import SkillsGrid from '../components/SkillsGrid';
 import TradingCardImage from '../components/TradingCardImage';
 import PastClients from '../components/PastClients';
 import Show from '../components/Show';
+import FunFacts from '../components/FunFacts';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
@@ -42,11 +43,13 @@ export default function DetailPage({ fetchedTeamMember }) {
       />
 
       <SkillsGrid skilldata={skills} />
-
-      <PersonalBio
-        name={fetchedTeamMember.firstName}
-        bio={fetchedTeamMember.bio}
-      />
+      <div className="obj-responsive-two-cols">
+        <PersonalBio
+          name={fetchedTeamMember.firstName}
+          bio={fetchedTeamMember.bio}
+        />
+        <FunFacts funFacts={fetchedTeamMember.funFacts} />
+      </div>
       <Show when={pastClients}>
         <PastClients pastClients={pastClients} />
       </Show>

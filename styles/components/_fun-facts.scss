@@ -1,0 +1,23 @@
+.cmp-fun-facts {
+  width: 100%;
+
+  &__header {
+    font-family: font-family("sans-extended");
+    font-size: font-size("xl");
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: space("lg");
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    list-style: inside;
+  }
+
+  &__fact {
+    font-size: font-size("lg");
+    margin: space("sm") 0;
+  }
+}
