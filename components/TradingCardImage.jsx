@@ -12,7 +12,7 @@ export default function TradingCardImage({ imageUrl, weeklyCapacity, forecastedH
             src={imageUrl}
             height={350}
             width={350}
-            alt={imageUrl}
+            alt=""
           />
         </div>
       </div>

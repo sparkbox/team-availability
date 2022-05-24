@@ -34,14 +34,13 @@ export default function CurrentProjects({ currentProjects }) {
 
   return (
     <section className="cmp-current-projects" aria-labelledby="current-projects">
+      <h2 id="current-projects" className="cmp-current-projects__header cmp-current-projects__header--heading">Current Projects</h2>
       <Show when={!currentProjects.length}>
-        <h2 id="current-projects" className="cmp-current-projects__header cmp-current-projects__header--heading">Current Projects</h2>
         <p className="cmp-current-projects__status">This team member is not currently on a client project.</p>
       </Show>
 
       <Show when={currentProjects.length}>
-        <table className="cmp-current-projects__table">
-          <caption className="cmp-current-projects__header cmp-current-projects__header--caption">Current Projects</caption>
+        <table className="cmp-current-projects__table" aria-labelledby="current-projects">
           <thead className="cmp-current-projects__table-head">
             <tr className="cmp-current-projects__table-header-row">
               <th scope="col" className="cmp-current-projects__table-header-cell">Project</th>
