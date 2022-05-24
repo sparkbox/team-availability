@@ -1,7 +1,8 @@
 {
   "0001": {
-    "firstName": "Aragorn II",
+    "firstName": "Aragorn",
     "lastName": "Elessar",
+    "suffix": "II",
     "nickname": "Strider",
     "department": "production",
     "jobTitle": "Technical Director",
@@ -49,6 +50,7 @@
   "0002": {
     "firstName": "Gandalf",
     "lastName": "the Grey",
+    "suffix": "",
     "department": "production",
     "jobTitle": "Project Manager",
     "techLead": false,
@@ -93,6 +95,7 @@
   "0003": {
     "firstName": "Frodo",
     "lastName": "Baggins",
+    "suffix": "",
     "department": "production",
     "jobTitle": "Developer",
     "techLead": true,
@@ -127,6 +130,7 @@
   "0004": {
     "firstName": "Samwise",
     "lastName": "Gamgee",
+    "suffix": "",
     "department": "production",
     "jobTitle": "Developer",
     "techLead": false,
@@ -163,6 +167,7 @@
   "0005": {
     "firstName": "Peregrin",
     "lastName": "Took",
+    "suffix": "",
     "nickname": "Pippin",
     "department": "production",
     "jobTitle": "Frontend Designer",
@@ -198,6 +203,7 @@
   "0006": {
     "firstName": "Meriadoc",
     "lastName": "Brandybuck",
+    "suffix": "",
     "nickname": "Merry",
     "department": "production",
     "jobTitle": "Developer",
@@ -233,6 +239,7 @@
   "0007": {
     "firstName": "Legolas",
     "lastName": "Greenleaf",
+    "suffix": "",
     "department": "experience design",
     "jobTitle": "UI Designer",
     "techLead": false,
@@ -275,6 +282,7 @@
   "0008": {
     "firstName": "Gimli",
     "lastName": "son of Glóin",
+    "suffix": "",
     "nickname": "Elf-friend",
     "department": "production",
     "jobTitle": "Developer",
@@ -318,6 +326,7 @@
   "0009": {
     "firstName": "Boromir",
     "lastName": "Gondor",
+    "suffix": "",
     "department": "outreach",
     "jobTitle": "Director of Business Development",
     "techLead": false,
@@ -347,6 +356,7 @@
   "0010": {
     "firstName": "Arwen",
     "lastName": "Undómiel",
+    "suffix": "",
     "department": "experience design",
     "jobTitle": "User Experience Strategist",
     "techLead": false,
@@ -383,6 +393,7 @@
   "0011": {
     "firstName": "Éowyn",
     "lastName": "",
+    "suffix": "",
     "department": "production",
     "jobTitle": "Developer",
     "techLead": true,
@@ -425,6 +436,7 @@
   "0012": {
     "firstName": "Galadriel",
     "lastName": "",
+    "suffix": "",
     "department": "client success",
     "jobTitle": "Projects Director",
     "techLead": false,

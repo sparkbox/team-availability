@@ -1,7 +1,9 @@
-export default function getFullName({ firstName, lastName }) {
-  if (firstName && lastName) return `${firstName} ${lastName}`;
+export default function getFullName({ firstName, lastName, suffix }) {
+  const suffixString = `${suffix && ` ${suffix}`}`;
 
-  if (firstName) return firstName;
+  if (firstName && lastName) return `${firstName} ${lastName}${suffixString}`;
+
+  if (firstName) return `${firstName}${suffixString}`;
 
   if (lastName) return lastName;
 

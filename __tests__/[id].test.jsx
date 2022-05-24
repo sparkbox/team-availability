@@ -4,8 +4,9 @@ import apiService from '../services/apiService';
 import DetailPage, { getServerSideProps } from '../pages/[id]';
 
 const MOCK_TEAM_MEMBER = {
-  firstName: 'Aragorn II',
+  firstName: 'Aragorn',
   lastName: 'Elessar',
+  suffix: 'II',
   photo: '/images/mock/aragorn.png',
   currentProjects: [],
   pastProjects: [''],
@@ -25,7 +26,7 @@ describe('DetailPage', () => {
       <DetailPage fetchedTeamMember={MOCK_TEAM_MEMBER} />,
     );
 
-    await waitFor(() => expect(screen.getByText('Aragorn II Elessar')).toBeInTheDocument());
+    await waitFor(() => expect(screen.getByText('Aragorn Elessar II')).toBeInTheDocument());
   });
 });
 
@@ -47,8 +48,9 @@ describe('getServerSideProps', () => {
       expect.objectContaining({
         props: {
           fetchedTeamMember: {
-            firstName: 'Aragorn II',
+            firstName: 'Aragorn',
             lastName: 'Elessar',
+            suffix: 'II',
             photo: '/images/mock/aragorn.png',
             currentProjects: [],
             pastProjects: [''],
