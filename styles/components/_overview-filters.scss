@@ -1,0 +1,21 @@
+.cmp-overview-filters {
+  width: 100%;
+  margin: space("sm") 0;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: space("sm");
+    border: none;
+    padding: 0;
+    padding-top: space("xs");
+    margin-right: space("lg");
+    margin-bottom: space("sm");
+
+    &-label {
+      text-transform: uppercase;
+    }
+  }
+}

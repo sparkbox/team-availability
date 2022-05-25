@@ -1,0 +1,31 @@
+.cmp-filter-toggle {
+  &__input {
+    @include visually-hidden;
+
+    &:checked + span {
+      background-color: color("white");
+      color: color("black");
+    }
+
+    &:focus + span {
+      outline: 2px solid white;
+      outline-offset: 2px;
+    }
+  }
+
+  &__text {
+    border: 1px solid color("white");
+    display: inline-block;
+    font-size: font-size("xs");
+    height: 3.125rem;
+    line-height: 3.125;
+    text-align: center;
+    transition: background-color 250ms, color 250ms ease-in-out;
+    width: 6rem;
+
+    &:hover {
+      background-color: color("white");
+      color: color("black");
+    }
+  }
+}

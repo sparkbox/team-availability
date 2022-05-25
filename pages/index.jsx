@@ -6,29 +6,29 @@ import SelectControl from '../components/SelectControl';
 import TradingCardGrid from '../components/TradingCardGrid';
 import getUniqueCurrentProjects from '../util/getUniqueCurrentProjects';
 import { getDate } from '../util/getDate';
+import OverviewFilters from '../components/OverviewFilters';
 
 export default function Home({ teamMembers }) {
   const { weekStart, weekEnd } = getDate();
   const currentProjects = getUniqueCurrentProjects(teamMembers);
 
   return (
-    <Layout>
-      <Head>
-        <title>Sparkbox Team Availability</title>
-        <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
-      </Head>
-      <h1>{`Week of ${weekStart} to ${weekEnd}`}</h1>
-
-      <FilterProvider>
+    <FilterProvider>
+      <Layout>
+        <Head>
+          <title>Sparkbox Team Availability</title>
+          <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
+        </Head>
+        <h1>{`Week of ${weekStart} to ${weekEnd}`}</h1>
         <SelectControl
           currentProjects={currentProjects}
         />
-
+        <OverviewFilters />
         <TradingCardGrid
           teamMembers={teamMembers}
         />
-      </FilterProvider>
-    </Layout>
+      </Layout>
+    </FilterProvider>
   );
 }
 
