@@ -1,0 +1,8 @@
+.obj-responsive-two-cols {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc($tablet-screen-width / 2));
+  justify-content: space-between;
+  column-gap: space("lg");
+  row-gap: space("lg");
+}
