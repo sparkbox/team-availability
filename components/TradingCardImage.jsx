@@ -10,8 +10,9 @@ export default function TradingCardImage({ imageUrl, weeklyCapacity, forecastedH
         <div className={`cmp-trading-card-image__image cmp-trading-card-image__image--${classColorModifier}`}>
           <Image
             src={imageUrl}
-            height={350}
+            layout="responsive"
             width={350}
+            height={350}
             alt=""
           />
         </div>
