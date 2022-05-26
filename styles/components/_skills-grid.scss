@@ -1,32 +1,55 @@
 .cmp-skills-grid {
+  $font-weight-semibold: 600;
+
   background-color: color("gray-400");
   box-sizing: border-box;
-  padding: space("2xl");
+  padding: space("lg");
   width: 100%;
 
+  @media (min-width: $sm-screen-width) {
+    padding: space("xl");
+  }
+
+  @media (min-width: $md-screen-width) {
+    padding: space("2xl");
+  }
+
   &__heading {
-    font-size: font-size("xl");
     font-family: font-family("sans-extended");
-    font-weight: 600;
+    font-size: font-size("lg");
+    font-weight: $font-weight-semibold;
+    letter-spacing: -0.02em;
     margin: 0;
     margin-bottom: space("lg");
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("xl");
+    }
   }
 
   &__category {
     width: 10rem;
 
     &-title {
+      font-size: font-size("3xs");
+      font-weight: $font-weight-semibold;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      font-size: font-size("md");
-      font-weight: 400;
     }
   }
 
   &__skill {
     display: block;
-    text-transform: capitalize;
-    font-size: font-size("md");
+    font-size: font-size("xs");
     margin: space("sm") 0;
-    font-weight: 300;
+    text-transform: capitalize;
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("md");
+    }
+
+    @media (min-width: $md-screen-width) {
+      font-size: font-size("lg");
+    }
   }
 }
