@@ -13,7 +13,9 @@ export default function TradingCardGrid({ teamMembers }) {
 
     if (roles.length && !roles.includes(member.jobTitle)) return false;
 
-    if (project !== 'all' && member.project !== project) return false;
+    const memberProjects = member.currentProjects.map((currentProject) => currentProject.project);
+
+    if (project !== 'all' && !(memberProjects.includes(project))) return false;
 
     return true;
   });
