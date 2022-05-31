@@ -64,25 +64,26 @@
 //    for example media object known from OOCSS.
 @import "./objects/layout";
 @import "./objects/personal-overview";
-@import "./objects/skills-grid";
 @import "./objects/responsive-cols";
+@import "./objects/skills-grid";
 
 // =====================================================================
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
 @import "./components/current-projects";
+@import "./components/fun-facts";
 @import "./components/hours-bar";
 @import "./components/logo";
+@import "./components/past-clients";
 @import "./components/personal-bio";
 @import "./components/personal-overview";
+@import "./components/select-control";
+@import "./components/skills-grid";
 @import "./components/skip-to-content";
 @import "./components/trading-card";
 @import "./components/trading-card-grid";
 @import "./components/trading-card-image";
-@import "./components/skills-grid";
-@import "./components/past-clients";
-@import "./components/fun-facts";
 
 // =====================================================================
 // 7. Vendors
