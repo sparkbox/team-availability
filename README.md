@@ -1,51 +1,96 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sparkbox Team Availability
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repo to your local machine.
+1. Install all required dependencies `npm i`.
+1. Start the development development server `npm run dev`.
+1. Project is now running at [http://localhost:3000](http://localhost:3000) 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Development 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### PR Process 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+1. Create a new branch consistent with the [Sparkbox git standard](https://github.com/sparkbox/standard/blob/main/code-style/git/README.md).  
+1. Publish your local branch to GitHub.
+1. Open a PR and assign a reviewer when your branch is ready.
+1. All tests and all linting checks must pass before a PR can merge.
+1. Before merging make sure your branch is caught up to `main`. See [Sparkbox git standard](https://github.com/sparkbox/standard/blob/main/code-style/git/README.md#rebasing-a-branch-onto-the-master-branch).   
+1. **Verified** commits are required! see [Sparkbox standard](https://github.com/sparkbox/standard/blob/6127cbeedccf12b4c34bc5b0bfec3f721b765d3e/security/security_policy_compliance/verified-commits.md).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Deployments 
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+When new code is pushed to `main` a new deployment is automatically deployed via Netlify to https://fellowship-availability.netlify.app. Additionally, preview deployments are automatically generated for each PR. On each PR look for a comment from Netlify for a link to the preview. Previews will automatically update when new commits are pushed to an open PR.
 
-## Learn More
+### Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+| Script | Description |
+| ------- | ------- |
+| `npm run dev` | Run the development server |
+| `npm test` | Run all tests |
+| `npm run lint` | Lint all JavaScript and Sass/CSS |
+| `npm run lint:js` | Lint only JavaScript |
+| `npm run lint:css` | Lint all Sass/CSS |
+| `npm run build` | Build the project for production |
+| `npm start` | Start the production build |
 
 
+### Team Member Data 
 
----
+Data for each team member is represented in a JSON object. Each data object should contain the following properties. 
 
-## Browser Testing
+| Property | Type | Status | Description |
+| ------- | ------- | ------- | ------- |
+| `firstName` | `string` | **required** | team member's first name |
+| `lastName` | `string` | **required** | team member's last name |
+| `suffix` | `string` | optional | team member's name suffix, if they have one |
+| `nickname` | `string` | unused | team members's nickname, if they have one |
+| `department` | `string` | unused | |
+| `jobTitle` | `string` | **required** | team member's job title |
+| `role` | `"Developer" \| "UX"  \| "FED" \| "Designer" \| "PM" \| ""` | **required** | used to assign a team member to a matching filter. **CAUTION** Adding additional roles will affect design in potentially unstable ways |
+| `techLead` | `boolean` | unused | is team member able to serve as a tech lead |
+| `skillLevel` | `number` | unused | |
+| `active` | `boolean` | unused | |
+| `cohortLeader` | `string` | optional | cohort team member is leader of, if they lead one | 
+| `cohortParticipant` | `string` | optional | cohort team member is participant in |
+| `internalResponsibility` | `string[] ` | unused | |
+| `discoveryLead` | `boolean` | unused | |
+| `certifications` | `string[]` | optional | team member's certifications, if they have any. `string[]` can be optionally substituted with a `string` of comma separated values *ex* `"PMP, PSM"` |
+| `bio` | `string` | optional | team member's bio |
+| `funFacts` | `string[]` | **required** | fun facts about the team member. can be [] if none |
+| `technologies` | `string[]` | optional | technologies a team member is proficient in. `string[]` can be optionally substituted with a `string` of comma separated values *ex* `"JavaScript, HTML, CSS` |
+| `expertise` | `string[]` | optional | technologies or skill sets a team member has expertise in. `string[]` can be optionally substituted with a `string` of comma separated values *ex* `"JavaScript, HTML, CSS` |
+| `strengths` | `string[]` | optional | team member's strengths. `string[]` can be optionally substituted with a `string` of comma separated values *ex* `"JavaScript, HTML, CSS` |
+| `interests` | `string[]` | optional | team member's interests. `string[]` can be optionally substituted with a `string` of comma separated values *ex* `"JavaScript, HTML, CSS` |
+| `currentProjects` | `project[]` | optional | current projects the team member is on. [See Below for project data specification](#project-data) |
+| `pastProjects`| `string[]` | **required** | past projects a team member has worked on |
+| `photo` | `string` | **required** | url of team member's photo |
+| `weeklyCapacity` | `number` | **required** | weekly capacity of maximum billable hours for a team member |
+| `forecastedHours` | `number` | **required** | forecasted weekly billable hours for a team member |
+| `pto` | `number` | unused | |
+
+
+#### Project Data
+
+Data for each project is represented in a JSON object. Each data object should contain the following properties. 
+
+| Property | Type | Status | Description |
+| ------- | ------- | ------- | ------- |
+| `client`| `string`| **required** | name of client |
+| `project` | `string`| **required** | name of project |
+| `startDate` | `"YYYY-MM-DD"`|  **required** | date of project start *ex* `"2021-04-12"` | 
+| `endDate` | `"YYYY-MM-DD"`|  **required** | date of project end *ex* `"2021-04-12"` | 
+
+
+### Browser Testing
 <!--
 The browser list should be tailored to specific engagement and client needs.
 Delete if irrelevant to this issue
 -->
 
-## Gold Level Support
+#### Gold Level Support
 
-In these browsers, behavior & design closely match original specifications. A user is able to access all content and functionality, including the usability of required assistive devices, such as keyboard and screenreader.
+In these browsers, behavior & design closely match original specifications. A user is able to access all content and functionality, including the usability of required assistive devices, such as keyboard and screen-reader.
 
 **macOS**
 
@@ -67,7 +112,7 @@ In these browsers, behavior & design closely match original specifications. A us
 * [ ] Chrome (last 6 months)
 * [ ] Firefox (last 6 months)
 
-## Silver Level Support
+#### Silver Level Support
 
 In these browsers, behavior & design are acceptable, but may not be as originally intended. A user is still able to access all content and functionality as described.
 
@@ -76,7 +121,7 @@ In these browsers, behavior & design are acceptable, but may not be as originall
 * [ ] Edge 18
 * [ ] Samsung Browser (last 3 years)
 
-## Bronze Level Support
+#### Bronze Level Support
 
 In these browsers, behavior & design may not be great, but the content doesn't appear "broken" to the user, either. All content is accessible, and functionality is as described. Additional testing may be required during implementation.
 
