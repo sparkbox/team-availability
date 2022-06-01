@@ -1,3 +1,4 @@
+import Availability from './Availability';
 import FilterToggle from './FilterToggle';
 
 export default function OverviewFilters() {
@@ -38,18 +39,7 @@ export default function OverviewFilters() {
       </fieldset>
       <fieldset className="cmp-overview-filters__group">
         <legend className="cmp-overview-filters__group-label">Availability</legend>
-        <FilterToggle
-          type="radio"
-          label="Available"
-          value="available"
-          name="av-buttons"
-        />
-        <FilterToggle
-          type="radio"
-          label="Unavailable"
-          value="unavailable"
-          name="av-buttons"
-        />
+        <Availability />
       </fieldset>
     </div>
   );
