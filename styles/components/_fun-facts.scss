@@ -3,10 +3,15 @@
 
   &__header {
     font-family: font-family("sans-extended");
-    font-size: font-size("xl");
+    font-size: font-size("lg");
     font-weight: 600;
     margin: 0;
-    margin-bottom: space("lg");
+    margin-bottom: space("md");
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("xl");
+      margin-bottom: space("lg");
+    }
   }
 
   &__list {
@@ -17,7 +22,11 @@
   }
 
   &__fact {
-    font-size: font-size("lg");
+    font-size: font-size("md");
     margin: space("sm") 0;
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("lg");
+    }
   }
 }

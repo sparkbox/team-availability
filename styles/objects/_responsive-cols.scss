@@ -1,8 +1,11 @@
 .obj-responsive-two-cols {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, calc($tablet-screen-width / 2));
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  column-gap: space("lg");
-  row-gap: space("lg");
+  gap: space("lg");
+
+  @media (min-width: $md-screen-width) {
+    flex-direction: row;
+  }
 }
