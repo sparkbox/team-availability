@@ -10,8 +10,9 @@ export default function FilterToggle({
         name={name}
         checked={checked}
         value={value}
+        aria-label={label}
       />
-      <span className="cmp-filter-toggle__text">{label}</span>
+      <span className="cmp-filter-toggle__text" aria-hidden="true" data-text={label}>{label}</span>
     </label>
   );
 }

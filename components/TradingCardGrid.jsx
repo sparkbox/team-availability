@@ -11,7 +11,7 @@ export default function TradingCardGrid({ teamMembers }) {
     if (!hasHoursAvailable && availability === availabilityOptions.AVAILABLE) return false;
     if (hasHoursAvailable && availability === availabilityOptions.UNAVAILABLE) return false;
 
-    if (roles.length && !roles.includes(member.jobTitle)) return false;
+    if (roles.length && !roles.includes(member.role)) return false;
 
     const memberProjects = member.currentProjects.map((currentProject) => currentProject.project);
 

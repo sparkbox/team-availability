@@ -6,10 +6,12 @@ import SelectControl from '../components/SelectControl';
 import TradingCardGrid from '../components/TradingCardGrid';
 import getUniqueCurrentProjects from '../util/getUniqueCurrentProjects';
 import { getDate } from '../util/getDate';
-import OverviewFilters from '../components/OverviewFilters';
+import Filters from '../components/Filters';
+import getUniqueRoles from '../util/getUniqueRoles';
 
 export default function Home({ teamMembers }) {
   const { weekStart, weekEnd } = getDate();
+  const uniqueRoles = getUniqueRoles(teamMembers);
   const currentProjects = getUniqueCurrentProjects(teamMembers);
 
   return (
@@ -23,7 +25,7 @@ export default function Home({ teamMembers }) {
         <SelectControl
           currentProjects={currentProjects}
         />
-        <OverviewFilters />
+        <Filters uniqueRoles={uniqueRoles} />
         <TradingCardGrid
           teamMembers={teamMembers}
         />

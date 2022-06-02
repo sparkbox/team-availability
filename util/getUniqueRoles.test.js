@@ -3,22 +3,22 @@ import getUniqueRoles from './getUniqueRoles';
 describe('getUniqueRoles', () => {
   const MOCK_TEAM_MEMBERS_DATA = {
     '0001': {
-      jobTitle: 'Developer',
+      role: 'Developer',
     },
     '0002': {
-      jobTitle: 'Developer',
+      role: 'Developer',
     },
     '0003': {
-      jobTitle: 'Frontend Designer',
+      role: 'Frontend Designer',
     },
     '0004': {
-      jobTitle: 'UI Designer',
+      role: 'UI Designer',
     },
     '0005': {
-      jobTitle: 'Technical Director',
+      role: 'Technical Director',
     },
     '0006': {
-      jobTitle: 'Project Manager',
+      role: 'Project Manager',
     },
   };
 
@@ -39,29 +39,29 @@ describe('getUniqueRoles', () => {
   it('does not include roles in the retured array that evaluate to a falsy value', () => {
     const MOCK_TEAM_MEMBERS_DATA_WITH_FALSY_VALUES = {
       '0001': {
-        jobTitle: 'Developer',
+        role: 'Developer',
       },
       '0002': {
-        jobTitle: '',
+        role: '',
       },
       '0003': {
-        jobTitle: [],
+        role: [],
       },
       '0004': {
-        jobTitle: 'Developer',
+        role: 'Developer',
       },
       '0005': {},
       '0006': {
-        jobTitle: 'Project Manager',
+        role: 'Project Manager',
       },
       '0007': {
-        jobTitle: undefined,
+        role: undefined,
       },
       '0008': {
-        jobTitle: null,
+        role: null,
       },
       '0009': {
-        jobTitle: 'UI Designer',
+        role: 'UI Designer',
       },
     };
 
@@ -75,33 +75,33 @@ describe('getUniqueRoles', () => {
   it('does not include roles in the retured array that are of an unexpected data type', () => {
     const MOCK_TEAM_MEMBERS_DATA_WITH_UNEXPECTED_DATA_TYPES = {
       '0001': {
-        jobTitle: 3,
+        role: 3,
       },
       '0002': {
-        jobTitle: 'Developer',
+        role: 'Developer',
       },
       '0003': {
-        jobTitle: true,
+        role: true,
       },
       '0004': {
-        jobTitle: {
+        role: {
           name: 'President',
         },
       },
       '0005': {
-        jobTitle: 'Project Manager',
+        role: 'Project Manager',
       },
       '0006': {
-        jobTitle: ['Ranger', 'Heir of Isildur'],
+        role: ['Ranger', 'Heir of Isildur'],
       },
       '0007': {
-        jobTitle: false,
+        role: false,
       },
       '0008': {
-        jobTitle: 'Developer',
+        role: 'Developer',
       },
       '0009': {
-        jobTitle: 'Developer',
+        role: 'Developer',
       },
     };
 

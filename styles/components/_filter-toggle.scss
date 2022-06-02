@@ -23,10 +23,21 @@
     text-transform: capitalize;
     transition: background-color 250ms, color 250ms ease-in-out;
     width: 6rem;
+    position: relative;
 
-    &:hover {
+    &::before {
+      display: block;
       background-color: color("white");
       color: color("black");
+      inset: 0;
+      position: absolute;
+      content: attr(data-text);
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      transition: clip-path 250ms ease-in-out;
+    }
+
+    &:hover::before {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
   }
 }
