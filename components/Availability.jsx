@@ -1,4 +1,5 @@
 import { availabilityOptions, useFilterContext } from '../context/FilterContext';
+import FieldsetGroup from './FieldsetGroup';
 import FilterToggle from './FilterToggle';
 
 export default function Availability() {
@@ -9,10 +10,10 @@ export default function Availability() {
   };
 
   return (
-    <>
+    <FieldsetGroup legend="availability">
       <FilterToggle
         type="radio"
-        label="Available"
+        label={availabilityOptions.AVAILABLE}
         value={availabilityOptions.AVAILABLE}
         name="av-buttons"
         checked={(availability === availabilityOptions.AVAILABLE)}
@@ -20,12 +21,12 @@ export default function Availability() {
       />
       <FilterToggle
         type="radio"
-        label="Unavailable"
+        label={availabilityOptions.UNAVAILABLE}
         value={availabilityOptions.UNAVAILABLE}
         name="av-buttons"
         checked={(availability === availabilityOptions.UNAVAILABLE)}
         onChange={(e) => handleChange(e)}
       />
-    </>
+    </FieldsetGroup>
   );
 }
