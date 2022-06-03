@@ -1,0 +1,14 @@
+.cmp-fieldset-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space("sm");
+  border: none;
+  padding: 0;
+  padding-top: space("xs");
+  margin-right: space("lg");
+  margin-bottom: space("sm");
+
+  &__legend {
+    text-transform: uppercase;
+  }
+}
