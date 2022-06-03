@@ -2,7 +2,6 @@ import Head from 'next/head';
 import { FilterProvider } from '../context/FilterContext';
 import apiService from '../services/apiService';
 import Layout from '../components/Layout';
-import SelectControl from '../components/SelectControl';
 import TradingCardGrid from '../components/TradingCardGrid';
 import getUniqueCurrentProjects from '../util/getUniqueCurrentProjects';
 import { getDate } from '../util/getDate';
@@ -22,10 +21,7 @@ export default function Home({ teamMembers }) {
           <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
         </Head>
         <h1>{`Week of ${weekStart} to ${weekEnd}`}</h1>
-        <SelectControl
-          currentProjects={currentProjects}
-        />
-        <Filters uniqueRoles={uniqueRoles} />
+        <Filters uniqueRoles={uniqueRoles} currentProjects={currentProjects} />
         <TradingCardGrid
           teamMembers={teamMembers}
         />

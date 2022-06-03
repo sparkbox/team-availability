@@ -1,4 +1,11 @@
 .cmp-filter-toggle {
+  display: flex;
+  flex: 1 1 auto;
+
+  @media (min-width: $lg-screen-width) {
+    width: 6rem;
+  }
+
   &__input {
     @include visually-hidden;
 
@@ -7,37 +14,44 @@
       color: color("black");
     }
 
-    &:focus + span {
-      outline: 2px solid white;
-      outline-offset: 2px;
+    @media (hover: hover) and (pointer: fine) {
+      &:focus + span {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
     }
   }
 
   &__text {
+    width: 100%;
     border: 1px solid color("white");
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: font-size("xs");
-    height: 3.125rem;
-    line-height: 3.125;
+    padding: space("sm");
     text-align: center;
     text-transform: capitalize;
-    transition: background-color 250ms, color 250ms ease-in-out;
-    width: 6rem;
+    transition: background-color $transition-quick, color $transition-quick ease-in-out;
     position: relative;
 
     &::before {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background-color: color("white");
       color: color("black");
       inset: 0;
       position: absolute;
       content: attr(data-text);
       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
-      transition: clip-path 250ms ease-in-out;
+      transition: clip-path $transition-quick ease-in-out;
     }
 
-    &:hover::before {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    @media (hover: hover) {
+      &:hover::before {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      }
     }
   }
 }

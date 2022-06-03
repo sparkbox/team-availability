@@ -5,8 +5,8 @@ import {
 const FilterContext = createContext();
 
 export const availabilityOptions = {
-  AVAILABLE: 'available',
-  UNAVAILABLE: 'unavailable',
+  AVAILABLE: 'Available',
+  UNAVAILABLE: 'Unavailable',
 };
 
 export const useFilterContext = () => useContext(FilterContext);

@@ -1,6 +1,16 @@
 .cmp-filters {
-  width: 100%;
-  margin: space("sm") 0;
   display: flex;
+  flex: row;
   flex-wrap: wrap;
+  background-color: color("gray-400");
+  border-bottom: 1px solid color("white");
+  gap: space("xs");
+  margin-top: space("sm");
+  margin-bottom: space("xl");
+  padding: space("md") space("sm");
+  width: auto;
+
+  @media (min-width: $lg-screen-width) {
+    padding-bottom: space("2xl");
+  }
 }
