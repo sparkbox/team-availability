@@ -1,5 +1,4 @@
 .cmp-personal-bio {
-  $full-width: 100%;
   $header-line-height: 39px;
   $content-line-height: 29px;
 
@@ -8,16 +7,25 @@
 
   &__header {
     font-family: font-family("sans-extended");
-    font-size: font-size("xl");
+    font-size: font-size("lg");
     font-weight: 600;
     line-height: $header-line-height;
     margin: 0;
-    margin-bottom: space("lg");
+    margin-bottom: space("md");
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("xl");
+      margin-bottom: space("lg");
+    }
   }
 
   &__content {
-    font-size: font-size("lg");
+    font-size: font-size("md");
     line-height: $content-line-height;
     margin: space("xs") 0;
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("lg");
+    }
   }
 }

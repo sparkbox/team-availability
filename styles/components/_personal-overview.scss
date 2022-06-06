@@ -1,18 +1,31 @@
 .cmp-personal-overview {
+  flex-grow: 1;
   line-height: 1.2;
   order: 2;
   text-align: left;
 
-  @media (min-width: $tablet-screen-width) {
+  @media (min-width: $sm-screen-width) {
+    margin-left: space("3xl");
+  }
+
+  @media (min-width: $md-screen-width) {
     margin-left: space("personal-overview-margin");
   }
 
   &__name {
     font-family: font-family("sans-extended");
-    font-size: font-size("detail-page-name");
+    font-size: font-size("xl");
     font-weight: 600;
     letter-spacing: -0.02em;
     margin: space("sm") 0;
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("2xl");
+    }
+
+    @media (min-width: $lg-screen-width) {
+      font-size: font-size("detail-page-name");
+    }
   }
 
   &__title,
@@ -21,11 +34,27 @@
   }
 
   &__title {
-    font-size: font-size("xl");
+    font-size: font-size("md");
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("lg");
+    }
+
+    @media (min-width: $md-screen-width) {
+      font-size: font-size("xl");
+    }
   }
 
   &__cohort {
-    font-size: font-size("lg");
+    font-size: font-size("xs");
     text-transform: capitalize;
+
+    @media (min-width: $sm-screen-width) {
+      font-size: font-size("md");
+    }
+
+    @media (min-width: $md-screen-width) {
+      font-size: font-size("lg");
+    }
   }
 }

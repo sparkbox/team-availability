@@ -43,13 +43,16 @@ export default function DetailPage({ fetchedTeamMember }) {
       />
 
       <SkillsGrid skilldata={skills} />
+
       <div className="obj-responsive-two-cols">
         <PersonalBio
           name={fetchedTeamMember.firstName}
           bio={fetchedTeamMember.bio}
         />
+
         <FunFacts funFacts={fetchedTeamMember.funFacts} />
       </div>
+
       <Show when={pastClients}>
         <PastClients pastClients={pastClients} />
       </Show>
