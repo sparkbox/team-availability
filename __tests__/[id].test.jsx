@@ -1,5 +1,6 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { useRouter } from 'next/router';
 import apiService from '../services/apiService';
 import DetailPage, { getServerSideProps } from '../pages/[id]';
 
@@ -17,8 +18,10 @@ const MOCK_TEAM_MEMBER = {
   cohortParticipant: 'fellowship',
 };
 
+jest.mock('next/router');
 jest.mock('../services/apiService');
 
+useRouter.mockImplementation(() => ({ pathname: '/0001' }));
 apiService.getTeamMemberById = jest.fn(() => Promise.resolve(MOCK_TEAM_MEMBER));
 
 describe('DetailPage', () => {
@@ -55,7 +58,7 @@ describe('getServerSideProps', () => {
             photo: '/images/mock/aragorn.png',
             currentProjects: [],
             pastProjects: [''],
-            funFacts: [],          
+            funFacts: [],
             weeklyCapacity: 32,
             forecastedHours: 11,
             cohortLeader: 'fellowship',
