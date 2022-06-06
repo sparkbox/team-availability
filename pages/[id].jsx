@@ -14,14 +14,14 @@ import PastClients from '../components/PastClients';
 import Show from '../components/Show';
 import FunFacts from '../components/FunFacts';
 
-export default function DetailPage({ fetchedTeamMember }) {
+export default function DetailPage({ teamMembers, fetchedTeamMember }) {
   const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
   const fullName = getFullName(fetchedTeamMember);
   const skills = getSkills(fetchedTeamMember);
   const pastClients = getPastClients(fetchedTeamMember);
 
   return (
-    <Layout>
+    <Layout teamMembers={teamMembers}>
       <Head>
         <title>{`${fullName} | Sparkbox Team Availability`}</title>
         <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
@@ -66,6 +66,7 @@ export async function getServerSideProps({ params, req }) {
   const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
   const baseUrl = `${scheme}${host}/api/fellowship/`;
   const fetchedTeamMember = await apiService.getTeamMemberById(baseUrl, id);
+  const teamMembers = await apiService.getAllTeamMembers(`${scheme}${host}/api/fellowship/`);
 
   if (!fetchedTeamMember) {
     return {
@@ -75,6 +76,7 @@ export async function getServerSideProps({ params, req }) {
 
   return {
     props: {
+      teamMembers,
       fetchedTeamMember,
     },
   };

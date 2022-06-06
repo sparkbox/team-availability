@@ -16,7 +16,7 @@ export default function Home({ teamMembers }) {
 
   return (
     <FilterProvider>
-      <Layout>
+      <Layout teamMembers={teamMembers}>
         <Head>
           <title>Sparkbox Team Availability</title>
           <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
