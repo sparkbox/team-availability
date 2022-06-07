@@ -15,12 +15,20 @@ export function FilterProvider({ children }) {
   const [availability, setAvailability] = useState(availabilityOptions.AVAILABLE);
   const [project, setProject] = useState('all');
   const [roles, setRoles] = useState([]);
+  const [weekOffset, setWeekOffset] = useState(0);
 
   const value = useMemo(() => (
     {
-      availability, setAvailability, project, setProject, roles, setRoles,
+      availability,
+      setAvailability,
+      project,
+      setProject,
+      roles,
+      setRoles,
+      weekOffset,
+      setWeekOffset,
     }
-  ), [availability, project, roles]);
+  ), [availability, project, roles, weekOffset]);
 
   return (
     <FilterContext.Provider value={value}>

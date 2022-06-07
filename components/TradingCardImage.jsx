@@ -1,8 +1,12 @@
 import Image from 'next/image';
+import { useFilterContext } from '../context/FilterContext';
 import getClassColorModifierString from '../util/getClassColorModifierString';
+import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 
 export default function TradingCardImage({ imageUrl, weeklyCapacity, forecastedHours }) {
-  const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours);
+  const { weekOffset } = useFilterContext();
+  const idx = getForecastedHoursIdx(weekOffset);
+  const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours[idx]);
 
   return (
     <div className="cmp-trading-card-image">
@@ -19,7 +23,7 @@ export default function TradingCardImage({ imageUrl, weeklyCapacity, forecastedH
       </div>
       <div className={`cmp-trading-card-image__hours-container cmp-trading-card-image__hours-container--${classColorModifier}`}>
         <span>
-          <span className="cmp-trading-card-image__hours">{weeklyCapacity - forecastedHours}</span>
+          <span className="cmp-trading-card-image__hours">{weeklyCapacity - forecastedHours[idx]}</span>
           {' '}
           hrs
         </span>
