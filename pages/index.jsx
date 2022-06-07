@@ -15,13 +15,14 @@ export default function Home({ teamMembers }) {
 
   return (
     <FilterProvider>
-      <Layout>
+      <Layout
+        filters={<Filters uniqueRoles={uniqueRoles} currentProjects={currentProjects} />}
+      >
         <Head>
           <title>Sparkbox Team Availability</title>
           <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
         </Head>
         <h1>{`Week of ${weekStart} to ${weekEnd}`}</h1>
-        <Filters uniqueRoles={uniqueRoles} currentProjects={currentProjects} />
         <TradingCardGrid
           teamMembers={teamMembers}
         />
