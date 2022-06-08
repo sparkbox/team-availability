@@ -73,24 +73,25 @@
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
 @import "./components/button";
+@import "./components/copy-to-clipboard-button";
 @import "./components/current-projects";
+@import "./components/fieldset-group";
+@import "./components/filter-toggle";
+@import "./components/filters";
 @import "./components/fun-facts";
 @import "./components/hours-bar";
 @import "./components/logo";
 @import "./components/past-clients";
 @import "./components/personal-bio";
 @import "./components/personal-overview";
+@import "./components/reset-filters";
 @import "./components/select-control";
 @import "./components/skills-grid";
 @import "./components/skip-to-content";
 @import "./components/trading-card";
 @import "./components/trading-card-grid";
 @import "./components/trading-card-image";
-@import "./components/filters";
-@import "./components/filter-toggle";
-@import "./components/fieldset-group";
-@import "./components/reset-filters";
-@import "./components/copy-to-clipboard-button";
+@import "./components/week-select";
 
 // =====================================================================
 // 7. Vendors

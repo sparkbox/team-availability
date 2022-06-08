@@ -13,7 +13,7 @@ export default function WeekSelect() {
   return (
     <div className="cmp-week-select">
       <label>
-        <span className="cmp-week-select__label">Weeks</span>
+        <span className="cmp-week-select__label">Week of </span>
         <select
           className="cmp-week-select__menu"
           name="weeks"
@@ -31,7 +31,7 @@ export default function WeekSelect() {
                 className="cmp-week-select__option"
                 value={weekOffsetValue}
               >
-                {`Week of ${weekStart} to ${weekEnd}`}
+                {`${weekStart} to ${weekEnd}`}
               </option>
             );
           })}
