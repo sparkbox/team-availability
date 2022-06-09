@@ -32,7 +32,7 @@ describe('getUniqueRoles', () => {
     const roles = getUniqueRoles(MOCK_TEAM_MEMBERS_DATA);
 
     expect(roles).toEqual([
-      'Developer', 'Frontend Designer', 'UI Designer', 'Technical Director', 'Project Manager',
+      'Developer', 'UI Designer', 'Project Manager', 'Frontend Designer', 'Technical Director',
     ]);
   });
 
@@ -68,7 +68,7 @@ describe('getUniqueRoles', () => {
     const roles = getUniqueRoles(MOCK_TEAM_MEMBERS_DATA_WITH_FALSY_VALUES);
 
     expect(roles).toEqual([
-      'Developer', 'Project Manager', 'UI Designer',
+      'Developer', 'UI Designer', 'Project Manager',
     ]);
   });
 
