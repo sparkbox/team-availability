@@ -2,7 +2,7 @@ import { useFilterContext } from '../context/FilterContext';
 import FieldsetGroup from './FieldsetGroup';
 
 export default function SelectControl({ currentProjects }) {
-  const { setProject } = useFilterContext();
+  const { project, setProject } = useFilterContext();
 
   const handleChange = ({ target }) => {
     setProject(target.value);
@@ -17,9 +17,22 @@ export default function SelectControl({ currentProjects }) {
         name="projects"
         onChange={(e) => handleChange(e)}
       >
-        <option className="cmp-select-control__option" value="all">All Projects</option>
-        {currentProjects.map((project) => (
-          <option key={project} className="cmp-select-control__option" value={project}>{project}</option>
+        <option
+          className="cmp-select-control__option"
+          value="all"
+          selected={(project === 'all')}
+        >
+          All Projects
+        </option>
+        {currentProjects.map((currentProject) => (
+          <option
+            key={currentProject}
+            className="cmp-select-control__option"
+            value={currentProject}
+            selected={(project === currentProject)}
+          >
+            {currentProject}
+          </option>
         ))}
       </select>
     </FieldsetGroup>

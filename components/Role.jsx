@@ -26,6 +26,7 @@ export default function Role({ uniqueRoles }) {
           label={role}
           value={role}
           name="role"
+          checked={(roles.includes(role))}
           onChange={() => toggleRole(role)}
         />
       ))}
