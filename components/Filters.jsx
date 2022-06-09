@@ -1,6 +1,7 @@
 import Availability from './Availability';
 import Role from './Role';
 import SelectControl from './SelectControl';
+import ResetFilters from './ResetFilters';
 
 export default function Filters({ uniqueRoles, currentProjects }) {
   return (
@@ -8,6 +9,7 @@ export default function Filters({ uniqueRoles, currentProjects }) {
       <SelectControl currentProjects={currentProjects} />
       <Role uniqueRoles={uniqueRoles} />
       <Availability />
+      <ResetFilters />
     </section>
   );
 }
