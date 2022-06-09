@@ -1,0 +1,8 @@
+.cmp-copy-to-clipboard-button {
+  // If this button becomes more widely used, or with variable text,
+  // then this should instead use something like :before { content: attr(data-label) }
+  // to set the width such that changing the text within the button doens't change the
+  // width of the button.
+  width: 6.25rem;
+  text-align: center;
+}

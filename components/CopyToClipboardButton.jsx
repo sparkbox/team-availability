@@ -15,7 +15,10 @@ const CopyToClipboardButton = ({ content, label, labelCopied }) => {
   }
 
   return (
-    <button onClick={copyContent}>
+    <button
+      onClick={copyContent}
+      className="cmp-btn cmp-btn__link cmp-copy-to-clipboard-button"
+    >
       {copied ? labelCopied : label}
     </button>
   )
