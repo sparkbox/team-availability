@@ -34,3 +34,26 @@
     @include assert-equal(stringify(6), "6");
   }
 }
+
+@include describe("strip-units function") {
+  @include it("outputs value without units") {
+    @include assert-equal(
+      strip-units(30rem),
+      30
+    );
+  }
+}
+
+@include describe("linear-scale function") {
+  @include it("returns clamp with values for linear scaling") {
+    @include assert-equal(
+      linear-scale(
+        6rem,
+        18rem,
+        20rem,
+        60rem
+      ),
+      clamp(6rem, 0rem + 30vw, 18rem)
+    );
+  }
+}

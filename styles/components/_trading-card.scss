@@ -1,5 +1,11 @@
 .cmp-trading-card {
-  width: $trading-card-width;
+  width:
+    linear-scale(
+      $min-trading-card-width,
+      $max-trading-card-width,
+      $xs-screen-width,
+      $lg-screen-width
+    );
   display: block;
 
   &__hrs-bar {
@@ -10,7 +16,13 @@
 
   &__name {
     display: inline-block;
-    font-size: font-size("xl");
+    font-size:
+      linear-scale(
+        font-size("md"),
+        font-size("xl"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
     margin-top: space("sm");
     margin-bottom: 0;
     font-weight: 500;
@@ -22,7 +34,13 @@
 
   &__title {
     margin-top: 0;
-    font-size: font-size("md");
+    font-size:
+      linear-scale(
+        font-size("xs"),
+        font-size("md"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
     font-weight: 300;
   }
 

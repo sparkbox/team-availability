@@ -1,8 +1,4 @@
 .cmp-week-select {
-  $sm-arrow-width: 0.92rem;
-  $md-arrow-width: 1.38rem;
-  $lg-arrow-width: 2.1rem;
-
   margin: space("xl") auto space("md");
 
   @media (min-width: $lg-screen-width) {
@@ -11,19 +7,22 @@
 
   &__label {
     font-family: font-family("sans-extended");
-    font-size: font-size("lg");
+    font-size:
+      linear-scale(
+        font-size("xs"),
+        font-size("3xl"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
     letter-spacing: -0.02em;
 
     @media (min-width: $sm-screen-width) {
-      font-size: font-size("xl");
-    }
-
-    @media (min-width: $md-screen-width) {
-      font-size: font-size("3xl");
+      margin: space("3xl") auto;
     }
   }
 
   &__menu {
+    padding-left: 0;
     appearance: none;
     background:
       transparent
@@ -34,11 +33,23 @@
     color: color("white");
     display: inline-block;
     font-family: font-family("sans-extended");
-    font-size: font-size("lg");
+    font-size:
+      linear-scale(
+        font-size("xs"),
+        font-size("3xl"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
     font-weight: 400;
     letter-spacing: -0.02em;
     margin-top: space("2xs");
-    padding-right: $sm-arrow-width;
+    padding-right:
+      linear-scale(
+        space("md"),
+        space("lg"),
+        $xs-screen-width,
+        $md-screen-width
+      );
     position: relative;
 
     @media (min-width: $sm-screen-width) {
@@ -48,9 +59,7 @@
         no-repeat;
       background-position: right 0 top 60%;
       display: inline;
-      font-size: font-size("xl");
       margin-top: unset;
-      padding-right: $md-arrow-width;
     }
 
     @media (min-width: $md-screen-width) {
@@ -59,8 +68,10 @@
         url("data:image/svg+xml;utf8,<svg viewBox='0 0 33 19' width='33' height='19' xmlns='http://www.w3.org/2000/svg' fill='none'><path stroke='%23fff' stroke-width='2.9' d='M1.1 2 17.1 17.1M31.1 2 15 17.1'/></svg>")
         no-repeat;
       background-position: right 0 top 60%;
-      font-size: font-size("3xl");
-      padding-right: $lg-arrow-width;
+    }
+
+    &:focus {
+      @include focus-styles;
     }
   }
 

@@ -9,7 +9,10 @@
           "color",
           "font-family",
           "font-size",
-          "space"
+          "space",
+          "math.div",
+          "strip-units",
+          "linear-scale"
         ]
       }
     ]
