@@ -1,0 +1,23 @@
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  // Reset and normalize styles.
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  // Show the overflow in IE.
+  overflow: visible;
+  // Remove the inheritance of text transform in Edge, Firefox, and IE.
+  text-transform: none;
+  // Correct the inability to style clickable types in iOS and Safari.
+  -webkit-appearance: button;
+
+  // Buttons should be clicky.
+  cursor: pointer;
+}

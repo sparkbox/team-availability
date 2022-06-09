@@ -57,6 +57,7 @@
 @import "./elements/body";
 @import "./elements/a";
 @import "./elements/ul";
+@import "./elements/button";
 
 // =====================================================================
 // 5. Objects
@@ -71,6 +72,7 @@
 // 6. Components
 //    Specific UI components. This is where majority of our work takes place
 //    and our UI components are often composed of Objects and Components
+@import "./components/buttons";
 @import "./components/current-projects";
 @import "./components/fun-facts";
 @import "./components/hours-bar";
