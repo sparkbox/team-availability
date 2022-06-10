@@ -11,12 +11,15 @@ button,
   border: 0;
   background: none;
   color: inherit;
+
   // Show the overflow in IE.
   overflow: visible;
+
   // Remove the inheritance of text transform in Edge, Firefox, and IE.
   text-transform: none;
+
   // Correct the inability to style clickable types in iOS and Safari.
-  -webkit-appearance: button;
+  appearance: button;
 
   // Buttons should be clicky.
   cursor: pointer;
