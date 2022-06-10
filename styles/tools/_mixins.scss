@@ -6,3 +6,8 @@
   height: 1px;
   overflow: hidden;
 }
+
+@mixin focus-styles {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}

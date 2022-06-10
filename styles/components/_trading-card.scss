@@ -25,4 +25,8 @@
     font-size: font-size("md");
     font-weight: 300;
   }
+
+  &:focus {
+    @include focus-styles;
+  }
 }

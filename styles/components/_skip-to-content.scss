@@ -7,5 +7,7 @@
     top: 0;
     width: auto;
     height: auto;
+
+    @include focus-styles;
   }
 }

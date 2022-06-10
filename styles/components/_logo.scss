@@ -9,6 +9,10 @@
   &__link {
     display: inline-block;
     height: 100%;
+
+    &:focus {
+      @include focus-styles;
+    }
   }
 
   &__words {

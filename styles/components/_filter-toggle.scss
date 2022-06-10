@@ -14,11 +14,8 @@
       color: color("black");
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      &:focus + span {
-        outline: 2px solid white;
-        outline-offset: 2px;
-      }
+    &:focus + span {
+      @include focus-styles;
     }
   }
 
