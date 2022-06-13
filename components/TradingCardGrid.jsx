@@ -3,6 +3,7 @@ import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 import TradingCard from './TradingCard';
 import Show from './Show';
+import TradingCardNumResults from './TradingCardNumResults';
 
 export default function TradingCardGrid({ teamMembers }) {
   const {
@@ -27,27 +28,32 @@ export default function TradingCardGrid({ teamMembers }) {
   });
 
   return (
-    <div className="cmp-trading-card-grid">
-      <Show when={!filteredTeamMembers.length}>
-        <p className="cmp-trading-card-grid__status">No team members fit your criteria.</p>
-      </Show>
-
-      <Show when={!!filteredTeamMembers.length}>
-        {filteredTeamMembers.map((member) => (
-          <article
-            key={member.id}
-          >
-            <TradingCard
-              photo={member.photo}
-              weeklyCapacity={member.weeklyCapacity}
-              forecastedHours={member.forecastedHours}
-              name={getFullName(member)}
-              jobTitle={member.jobTitle}
-              id={member.id}
-            />
-          </article>
-        ))}
-      </Show>
-    </div>
+    <>
+      <TradingCardNumResults
+        numResults={filteredTeamMembers.length}
+        numTotal={teamMembers.length}
+      />
+      <div className="cmp-trading-card-grid">
+        <Show when={!filteredTeamMembers.length}>
+          <p className="cmp-trading-card-grid__status">No team members fit your criteria.</p>
+        </Show>
+        <Show when={!!filteredTeamMembers.length}>
+          {filteredTeamMembers.map((member) => (
+            <article
+              key={member.id}
+            >
+              <TradingCard
+                photo={member.photo}
+                weeklyCapacity={member.weeklyCapacity}
+                forecastedHours={member.forecastedHours}
+                name={getFullName(member)}
+                jobTitle={member.jobTitle}
+                id={member.id}
+              />
+            </article>
+          ))}
+        </Show>
+      </div>
+    </>
   );
 }
