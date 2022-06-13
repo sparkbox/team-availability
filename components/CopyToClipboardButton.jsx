@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 
 // Button that copies given text `content` to the users clipboard.
 // `label` and `labelCopied` are the text to display before/after click.
-function CopyToClipboardButton({ content, label, labelCopied }) {
+export default function CopyToClipboardButton({
+  content = '',
+  label = 'Copy Text',
+  labelCopied = 'Copied!',
+}) {
   const [copied, setCopied] = useState(false);
 
-  const copyContent = (e) => {
-    e.preventDefault();
+  const copyContent = () => {
     navigator.clipboard.writeText(content);
     setCopied(true);
     setTimeout(() => {
@@ -18,17 +21,9 @@ function CopyToClipboardButton({ content, label, labelCopied }) {
     <button
       type="button"
       onClick={copyContent}
-      className="cmp-btn cmp-btn__link cmp-copy-to-clipboard-button"
+      className="cmp-button cmp-button--link cmp-copy-to-clipboard-button"
     >
       {copied ? labelCopied : label}
     </button>
   );
 }
-
-CopyToClipboardButton.defaultProps = {
-  content: '',
-  label: 'Copy Text',
-  labelCopied: 'Copied!',
-};
-
-export default CopyToClipboardButton;

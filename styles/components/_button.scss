@@ -1,9 +1,9 @@
 // stub, should be fleshed out
-.cmp-btn {
+.cmp-button {
   padding: 0.25rem 1rem;
   font-size: font-size("xs");
 
-  &__link {
+  &--link {
     text-decoration: underline;
   }
 }

@@ -9,6 +9,11 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    margin-bottom: space("md");
+
+    @media (min-width: $sm-screen-width) {
+      margin-bottom: space("lg");
+    }
   }
 
   &__heading {
@@ -17,11 +22,9 @@
     font-weight: 600;
     line-height: $header-line-height;
     margin: 0;
-    margin-bottom: space("md");
 
     @media (min-width: $sm-screen-width) {
       font-size: font-size("xl");
-      margin-bottom: space("lg");
     }
   }
 
