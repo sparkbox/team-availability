@@ -1,9 +1,17 @@
 // stub, should be fleshed out
 .cmp-button {
-  padding: 0.25rem 1rem;
+  padding: space("sm");
+  padding-right: 0;
   font-size: font-size("xs");
 
   &--link {
-    text-decoration: underline;
+    @media (hover: hover) {
+      &:hover{
+        text-decoration: underline;
+      }  
+    }
+    &:focus {
+      @include focus-styles;
+    }
   }
 }
