@@ -12,6 +12,8 @@
     font-size: font-size("xs");
     font-weight: 400;
     letter-spacing: -0.02em;
+    padding: space("sm");
+    padding-bottom: 0;
 
     &:hover {
       text-decoration: underline;

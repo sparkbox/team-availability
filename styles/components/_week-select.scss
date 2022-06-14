@@ -3,6 +3,8 @@
   $md-arrow-width: 1.38rem;
   $lg-arrow-width: 2.1rem;
 
+  margin: space("xl") auto;
+
   &__label {
     font-family: font-family("sans-extended");
     font-size: font-size("lg");
@@ -10,6 +12,7 @@
 
     @media (min-width: $sm-screen-width) {
       font-size: font-size("xl");
+      margin: space("3xl") auto;
     }
 
     @media (min-width: $md-screen-width) {
