@@ -5,6 +5,7 @@
   box-sizing: border-box;
   padding: space("lg");
   width: 100%;
+  margin-top: space("xl");
 
   @media (min-width: $sm-screen-width) {
     padding: space("xl");

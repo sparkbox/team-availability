@@ -1,12 +1,13 @@
 .obj-personal-overview {
-  align-items: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin: space("xl") auto;
 
   @media (min-width: $sm-screen-width) {
-    align-items: center;
     justify-content: start;
     flex-direction: row;
+    margin: space("3xl") auto;
   }
 }
