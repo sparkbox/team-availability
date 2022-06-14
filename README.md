@@ -66,7 +66,7 @@ Data for each team member is represented in a JSON object. Each data object shou
 | `pastProjects`| `string[]` | **required** | past projects a team member has worked on |
 | `photo` | `string` | **required** | url of team member's photo |
 | `weeklyCapacity` | `number` | **required** | weekly capacity of maximum billable hours for a team member |
-| `forecastedHours` | `number` | **required** | forecasted weekly billable hours for a team member |
+| `forecastedHours` | `number[]` | **required** | forecasted weekly billable hours for a team member per week |
 | `pto` | `number` | unused | |
 
 
