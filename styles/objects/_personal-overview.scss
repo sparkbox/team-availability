@@ -10,4 +10,8 @@
     flex-direction: row;
     margin: space("3xl") auto;
   }
+
+  @media (min-width: $lg-screen-width) {
+    margin: space("logo-to-header") auto space("personal-overview-margin-bottom");
+  }
 }

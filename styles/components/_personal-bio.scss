@@ -6,6 +6,10 @@
   width: 100%;
   margin-top: space("xl");
 
+  @media (min-width: $lg-screen-width) {
+    margin-top: space("3xl");
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
