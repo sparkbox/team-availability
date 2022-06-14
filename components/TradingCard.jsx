@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import HoursBar from './HoursBar';
 import TradingCardImage from './TradingCardImage';
@@ -9,8 +10,14 @@ export default function TradingCard({
   photo, forecastedHours, name, jobTitle, id, weeklyCapacity,
 }) {
   const { weekOffset } = useFilterContext();
-  const idx = getForecastedHoursIdx(weekOffset);
-  const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours[idx]);
+  const [index, setIndex] = useState(0);
+  const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours[index]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIndex(getForecastedHoursIdx(weekOffset));
+    }, 450);
+  }, [index, weekOffset]);
 
   return (
     <Link href={`/${id}`} passHref>
@@ -18,16 +25,16 @@ export default function TradingCard({
         <TradingCardImage
           imageUrl={photo}
           weeklyCapacity={weeklyCapacity}
-          forecastedHours={forecastedHours[idx]}
+          forecastedHours={forecastedHours[index]}
         />
         <div className="cmp-trading-card__hrs-bar">
-          <HoursBar forecastedHours={forecastedHours[idx]} weeklyCapacity={weeklyCapacity} />
+          <HoursBar forecastedHours={forecastedHours[index]} weeklyCapacity={weeklyCapacity} />
         </div>
         <div>
           <span className="cmp-trading-card__name">{name}</span>
           <p className="cmp-trading-card__title">{jobTitle}</p>
         </div>
-        <span className={`cmp-trading-card__hrs cmp-trading-card__hrs--${classColorModifier}`}>{`${weeklyCapacity - forecastedHours[idx]}hrs`}</span>
+        <span className={`cmp-trading-card__hrs cmp-trading-card__hrs--${classColorModifier}`}>{`${weeklyCapacity - forecastedHours[index]}hrs`}</span>
       </a>
     </Link>
   );

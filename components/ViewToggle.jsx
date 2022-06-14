@@ -1,16 +1,12 @@
-import { useViewContext } from '../context/ViewContext';
-
-export default function ViewToggle() {
-  const { view, setView } = useViewContext();
-
+export default function ViewToggle({ currentView, onChangeView }) {
   return (
-    <div className="cmp-view-toggle" data-view={view}>
+    <div className="cmp-view-toggle" data-view={currentView}>
       <label className="cmp-view-toggle__button">
         <input
           className="cmp-view-toggle__input"
           type="radio"
-          checked={(view === 'grid')}
-          onChange={() => setView('grid')}
+          checked={(currentView === 'grid')}
+          onChange={() => onChangeView('grid')}
           name="view-select"
           value="grid"
           aria-label="grid view"
@@ -26,8 +22,8 @@ export default function ViewToggle() {
         <input
           className="cmp-view-toggle__input"
           type="radio"
-          checked={(view === 'list')}
-          onChange={() => setView('list')}
+          checked={(currentView === 'list')}
+          onChange={() => onChangeView('list')}
           name="view-select"
           value="list"
           aria-label="list view"
