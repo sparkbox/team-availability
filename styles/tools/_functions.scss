@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @function color($key) {
   @return map-get($colors, $key);
 }
@@ -16,4 +18,21 @@
 
 @function stringify($value) {
   @return $value + "";
+}
+
+// from sparkle
+@function strip-units($number) {
+  @return math.div($number, ($number * 0 + 1));
+}
+
+// pattern from https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+@function linear-scale($minSize, $maxSize, $minViewport, $maxViewport) {
+  $slope: math.div(
+    (strip-units($maxSize) - strip-units($minSize)),
+    (strip-units($maxViewport) - strip-units($minViewport))
+  );
+  $y-axis-intersection: ( - strip-units($minViewport) * $slope) + strip-units($minSize);
+  $preferred-value: calc(( $y-axis-intersection * 1rem) + ($slope * 100vw));
+
+  @return clamp($minSize, $preferred-value, $maxSize);
 }

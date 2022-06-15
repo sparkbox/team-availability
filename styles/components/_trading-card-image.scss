@@ -1,9 +1,15 @@
 .cmp-trading-card-image {
-  $image-size: $trading-card-width;
+  $image-size: $max-trading-card-width;
 
   order: 1;
   position: relative;
-  width: clamp(9rem, 100%, 18rem);
+  width:
+    linear-scale(
+      $min-trading-card-width,
+      $max-trading-card-width,
+      $xs-screen-width,
+      $lg-screen-width
+    );
 
   &__overlay {
     position: relative;
@@ -92,8 +98,20 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: calc($image-size * 0.24);
-    height: calc($image-size * 0.24);
+    width:
+      linear-scale(
+        calc($image-size * 0.2),
+        calc($image-size * 0.3),
+        $xs-screen-width,
+        $md-screen-width
+      );
+    height:
+      linear-scale(
+        calc($image-size * 0.2),
+        calc($image-size * 0.3),
+        $xs-screen-width,
+        $md-screen-width
+      );
     color: color("black");
     font-weight: 700;
     transition: background-color 125ms linear;
@@ -101,13 +119,6 @@
 
     @media (min-width: $sm-screen-width) {
       bottom: space("lg");
-      width: calc($image-size * 0.27);
-      height: calc($image-size * 0.27);
-    }
-
-    @media (min-width: $md-screen-width) {
-      width: calc($image-size * 0.3);
-      height: calc($image-size * 0.3);
     }
 
     &--gray {
@@ -136,14 +147,12 @@
   }
 
   &__hours {
-    font-size: font-size("md");
-
-    @media (min-width: $sm-screen-width) {
-      font-size: font-size("lg");
-    }
-
-    @media (min-width: $md-screen-width) {
-      font-size: font-size("xl");
-    }
+    font-size:
+      linear-scale(
+        font-size("md"),
+        font-size("xl"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
   }
 }
