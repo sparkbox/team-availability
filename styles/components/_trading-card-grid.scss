@@ -1,31 +1,41 @@
 .cmp-trading-card-grid {
   width: 100%;
-
-  $grid-col-width: linear-scale(
-    $min-trading-card-width,
-    $max-trading-card-width,
-    $xs-screen-width,
-    $lg-screen-width
-  );
-
   margin: 0 auto;
-  display: grid;
-  align-items: start;
-  justify-content: space-around;
-  grid-template-columns: repeat(auto-fill, $grid-col-width);
 
-  $column-gap: linear-scale(
-    space("xs"),
-    space("md"),
-    $xs-screen-width,
-    $lg-screen-width
-  );
-  $row-gap: linear-scale(
-    space("sm"),
-    space("xl"),
-    $xs-screen-width,
-    $lg-screen-width
-  );
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-  gap: $row-gap $column-gap;
+  &__grid {
+    .cmp-trading-card-grid[data-view="grid"] & {
+      $grid-col-width: linear-scale(
+        $min-trading-card-width,
+        $max-trading-card-width,
+        $xs-screen-width,
+        $lg-screen-width
+      );
+
+      display: grid;
+      align-items: start;
+      justify-content: space-around;
+      grid-template-columns: repeat(auto-fill, $grid-col-width);
+
+      $column-gap: linear-scale(
+        space("xs"),
+        space("md"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
+      $row-gap: linear-scale(
+        space("sm"),
+        space("xl"),
+        $xs-screen-width,
+        $lg-screen-width
+      );
+
+      gap: $row-gap $column-gap;
+    }
+  }
 }

@@ -155,4 +155,8 @@
         $lg-screen-width
       );
   }
+
+  .cmp-trading-card-grid[data-view="list"] & {
+    display: none;
+  }
 }

@@ -4,10 +4,11 @@ import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 import TradingCard from './TradingCard';
 import Show from './Show';
 import TradingCardNumResults from './TradingCardNumResults';
+import ViewToggle from './ViewToggle';
 
 export default function TradingCardGrid({ teamMembers }) {
   const {
-    project, roles, availability, weekOffset,
+    project, roles, availability, weekOffset, view,
   } = useFilterContext();
 
   const hoursIdx = getForecastedHoursIdx(weekOffset);
@@ -28,15 +29,16 @@ export default function TradingCardGrid({ teamMembers }) {
   });
 
   return (
-    <>
-      <TradingCardNumResults
-        numResults={filteredTeamMembers.length}
-        numTotal={teamMembers.length}
-      />
-      <div className="cmp-trading-card-grid">
-        <Show when={!filteredTeamMembers.length}>
-          <p className="cmp-trading-card-grid__status">No team members fit your criteria.</p>
-        </Show>
+    <div className="cmp-trading-card-grid" data-view={view}>
+      <div className="cmp-trading-card-grid__heading">
+        <TradingCardNumResults
+          numResults={filteredTeamMembers.length}
+          numTotal={teamMembers.length}
+        />
+        <ViewToggle />
+      </div>
+      <div className="cmp-trading-card-grid__grid">
+
         <Show when={!!filteredTeamMembers.length}>
           {filteredTeamMembers.map((member) => (
             <article
@@ -54,6 +56,6 @@ export default function TradingCardGrid({ teamMembers }) {
           ))}
         </Show>
       </div>
-    </>
+    </div>
   );
 }

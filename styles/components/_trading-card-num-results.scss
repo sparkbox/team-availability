@@ -1,5 +1,19 @@
 .cmp-trading-card-num-results {
-  font-size: font-size("lg");
+  font-size:
+    linear-scale(
+      font-size("md"),
+      font-size("lg"),
+      $sm-screen-width,
+      $lg-screen-width
+    );
   font-family: font-family("sans-extended");
   margin-bottom: space("lg");
+
+  > span {
+    display: block;
+
+    @media (min-width: $sm-screen-width) {
+      display: initial;
+    }
+  }
 }

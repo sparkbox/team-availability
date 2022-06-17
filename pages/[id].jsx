@@ -13,12 +13,16 @@ import TradingCardImage from '../components/TradingCardImage';
 import PastClients from '../components/PastClients';
 import Show from '../components/Show';
 import FunFacts from '../components/FunFacts';
+import { useFilterContext } from '../context/FilterContext';
+import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
   const fullName = getFullName(fetchedTeamMember);
   const skills = getSkills(fetchedTeamMember);
   const pastClients = getPastClients(fetchedTeamMember);
+  const { weekOffset } = useFilterContext();
+  const idx = getForecastedHoursIdx(weekOffset);
 
   return (
     <Layout>
@@ -33,7 +37,7 @@ export default function DetailPage({ fetchedTeamMember }) {
       >
         <TradingCardImage
           imageUrl={fetchedTeamMember.photo}
-          forecastedHours={fetchedTeamMember.forecastedHours}
+          forecastedHours={fetchedTeamMember.forecastedHours[idx]}
           weeklyCapacity={fetchedTeamMember.weeklyCapacity}
         />
       </PersonalOverview>

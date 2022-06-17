@@ -1,0 +1,42 @@
+.cmp-view-toggle {
+  &__input {
+    @include visually-hidden;
+
+    &:focus + svg {
+      @include focus-styles;
+    }
+
+    @media (hover: hover) {
+      &:hover + svg {
+        fill: white;
+        transition: fill $transition-quick ease-in-out;
+      }
+    }
+  }
+
+  &__text {
+    @include visually-hidden;
+  }
+
+  &__icon {
+    fill: transparent;
+
+    > rect {
+      stroke: white;
+    }
+
+    &--list {
+      margin-left: space("sm");
+
+      .cmp-view-toggle[data-view="list"] & {
+        fill: white;
+      }
+    }
+
+    &--grid {
+      .cmp-view-toggle[data-view="grid"] & {
+        fill: white;
+      }
+    }
+  }
+}

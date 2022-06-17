@@ -16,6 +16,7 @@ export function FilterProvider({ children }) {
   const [project, setProject] = useState('all');
   const [roles, setRoles] = useState([]);
   const [weekOffset, setWeekOffset] = useState(0);
+  const [view, setView] = useState('grid');
 
   const value = useMemo(() => (
     {
@@ -27,8 +28,10 @@ export function FilterProvider({ children }) {
       setRoles,
       weekOffset,
       setWeekOffset,
+      view,
+      setView
     }
-  ), [availability, project, roles, weekOffset]);
+  ), [availability, project, roles, weekOffset, view]);
 
   return (
     <FilterContext.Provider value={value}>
