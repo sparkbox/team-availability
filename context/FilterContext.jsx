@@ -1,5 +1,5 @@
 import {
-  createContext, useContext, useMemo, useState,
+  createContext, useContext, useMemo, useState, useRef
 } from 'react';
 
 const FilterContext = createContext();
@@ -17,6 +17,7 @@ export function FilterProvider({ children }) {
   const [roles, setRoles] = useState([]);
   const [weekOffset, setWeekOffset] = useState(0);
   const [view, setView] = useState('grid');
+  const layoutContainerRef = useRef(null);
 
   const value = useMemo(() => (
     {
@@ -29,7 +30,8 @@ export function FilterProvider({ children }) {
       weekOffset,
       setWeekOffset,
       view,
-      setView
+      setView,
+      layoutContainerRef
     }
   ), [availability, project, roles, weekOffset, view]);
 

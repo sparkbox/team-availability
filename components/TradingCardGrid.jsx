@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { availabilityOptions, useFilterContext } from '../context/FilterContext';
 import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
@@ -8,7 +9,7 @@ import ViewToggle from './ViewToggle';
 
 export default function TradingCardGrid({ teamMembers }) {
   const {
-    project, roles, availability, weekOffset, view,
+    project, roles, availability, weekOffset, view, setView, layoutContainerRef,
   } = useFilterContext();
 
   const hoursIdx = getForecastedHoursIdx(weekOffset);
@@ -27,6 +28,12 @@ export default function TradingCardGrid({ teamMembers }) {
 
     return true;
   });
+
+  useEffect(() => {
+    if (layoutContainerRef.current.clientWidth < 640) {
+      setView('list');
+    }
+  }, [layoutContainerRef, setView]);
 
   return (
     <div className="cmp-trading-card-grid" data-view={view}>
