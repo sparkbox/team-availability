@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { availabilityOptions, useFilterContext } from '../context/FilterContext';
+import { useViewContext } from '../context/ViewContext';
 import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 import TradingCard from './TradingCard';
@@ -9,9 +10,11 @@ import ViewToggle from './ViewToggle';
 
 export default function TradingCardGrid({ teamMembers }) {
   const {
-    project, roles, availability, weekOffset, view, setView, layoutContainerRef,
+    project, roles, availability, weekOffset,
   } = useFilterContext();
-
+  const {
+    view, setView, layoutContainerRef,
+  } = useViewContext();
   const hoursIdx = getForecastedHoursIdx(weekOffset);
 
   const filteredTeamMembers = teamMembers.filter((member) => {

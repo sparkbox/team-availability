@@ -1,7 +1,7 @@
-import { useFilterContext } from '../context/FilterContext';
+import { useViewContext } from '../context/ViewContext';
 
 export default function ViewToggle() {
-  const { view, setView } = useFilterContext();
+  const { view, setView } = useViewContext();
 
   return (
     <div className="cmp-view-toggle" data-view={view}>

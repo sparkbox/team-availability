@@ -1,6 +1,7 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { FilterProvider } from '../context/FilterContext';
+import { ViewProvider } from '../context/ViewContext';
 import apiService from '../services/apiService';
 import DetailPage, { getServerSideProps } from '../pages/[id]';
 
@@ -25,9 +26,11 @@ apiService.getTeamMemberById = jest.fn(() => Promise.resolve(MOCK_TEAM_MEMBER));
 describe('DetailPage', () => {
   it('renders the expected text', async () => {
     render(
-      <FilterProvider>
-        <DetailPage fetchedTeamMember={MOCK_TEAM_MEMBER} />
-      </FilterProvider>,
+      <ViewProvider>
+        <FilterProvider>
+          <DetailPage fetchedTeamMember={MOCK_TEAM_MEMBER} />
+        </FilterProvider>
+      </ViewProvider>,
     );
 
     await waitFor(() => expect(screen.getByText('Aragorn Elessar II')).toBeInTheDocument());
