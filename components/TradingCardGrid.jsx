@@ -14,6 +14,8 @@ const classes = {
   FADEIN: 'cmp-trading-card-grid__grid--fadein',
 };
 
+const AVAILABILITY_CUTOFF = 16;
+
 export default function TradingCardGrid({ teamMembers }) {
   const {
     project, roles, availability, weekOffset,
@@ -34,33 +36,26 @@ export default function TradingCardGrid({ teamMembers }) {
   };
 
   useEffect(() => {
-    const filterTeamMembers = (allTeamMembers) => (
-      allTeamMembers.filter((member) => {
-        const hoursIdx = getForecastedHoursIdx(weekOffset);
-        const hasHoursAvailable = member.weeklyCapacity - member.forecastedHours[hoursIdx] > 0;
+    // eslint-disable-next-line max-len
+    const isAvailable = (member) => member.weeklyCapacity - member.forecastedHours > AVAILABILITY_CUTOFF;
+    const availabilityFilter = (member) => {
+      if (availability.length === 0 || availability.length === 2) return true;
+      return availability.includes(availabilityOptions.AVAILABLE) === isAvailable(member);
+    };
 
-        if (availability.length !== Object.keys(availabilityOptions).length) {
-          if (
-            !hasHoursAvailable && availability.includes(availabilityOptions.AVAILABLE)
-          ) return false;
-          if (
-            hasHoursAvailable && availability.includes(availabilityOptions.UNAVAILABLE)
-          ) return false;
-        }
+    const roleFilter = (member) => roles.length === 0 || roles.includes(member.role);
 
-        if (roles.length && !roles.includes(member.role)) return false;
+    const hasProject = (member) => member.currentProjects.some((cp) => cp.project === project);
+    const projectFilter = (member) => project === 'all' || hasProject(member);
 
-        const memberProjects = member.currentProjects.map(
-          (currentProject) => currentProject.project,
-        );
+    const hoursIdx = getForecastedHoursIdx(weekOffset);
+    const teamMembersWithHours = teamMembers.map((member) => ({
+      ...member,
+      forecastedHours: member.forecastedHours[hoursIdx],
+    }));
 
-        if (project !== 'all' && !(memberProjects.includes(project))) return false;
-
-        return true;
-      })
-    );
-
-    const newFilteredTeamMembers = filterTeamMembers(teamMembers);
+    const newFilteredTeamMembers = teamMembersWithHours
+      .filter(availabilityFilter).filter(roleFilter).filter(projectFilter);
 
     if (gridClassModifier === classes.HIDDEN) {
       setFilteredTeamMembers(newFilteredTeamMembers);
