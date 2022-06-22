@@ -4,7 +4,7 @@ export default function ResetFilters() {
   const { setAvailability, setProject, setRoles } = useFilterContext();
 
   const handleClick = () => {
-    setAvailability(availabilityOptions.AVAILABLE);
+    setAvailability(availabilityOptions.ALL);
     setProject('all');
     setRoles([]);
   };
