@@ -1,10 +1,10 @@
-import { availabilityOptions, useFilterContext } from '../context/FilterContext';
+import { useFilterContext } from '../context/FilterContext';
 
 export default function ResetFilters() {
   const { setAvailability, setProject, setRoles } = useFilterContext();
 
   const handleClick = () => {
-    setAvailability(availabilityOptions.ALL);
+    setAvailability([]);
     setProject('all');
     setRoles([]);
   };

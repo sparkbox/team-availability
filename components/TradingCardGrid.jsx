@@ -39,9 +39,13 @@ export default function TradingCardGrid({ teamMembers }) {
         const hoursIdx = getForecastedHoursIdx(weekOffset);
         const hasHoursAvailable = member.weeklyCapacity - member.forecastedHours[hoursIdx] > 0;
 
-        if (availability !== availabilityOptions.ALL) {
-          if (!hasHoursAvailable && availability === availabilityOptions.AVAILABLE) return false;
-          if (hasHoursAvailable && availability === availabilityOptions.UNAVAILABLE) return false;
+        if (availability.length !== Object.keys(availabilityOptions).length) {
+          if (
+            !hasHoursAvailable && availability.includes(availabilityOptions.AVAILABLE)
+          ) return false;
+          if (
+            hasHoursAvailable && availability.includes(availabilityOptions.UNAVAILABLE)
+          ) return false;
         }
 
         if (roles.length && !roles.includes(member.role)) return false;

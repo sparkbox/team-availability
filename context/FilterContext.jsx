@@ -7,13 +7,12 @@ const FilterContext = createContext();
 export const availabilityOptions = {
   AVAILABLE: 'Available',
   UNAVAILABLE: 'Unavailable',
-  ALL: 'All',
 };
 
 export const useFilterContext = () => useContext(FilterContext);
 
 export function FilterProvider({ children }) {
-  const [availability, setAvailability] = useState(availabilityOptions.ALL);
+  const [availability, setAvailability] = useState([]);
   const [project, setProject] = useState('all');
   const [roles, setRoles] = useState([]);
   const [weekOffset, setWeekOffset] = useState(0);
