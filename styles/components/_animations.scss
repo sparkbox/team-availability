@@ -1,0 +1,28 @@
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeout {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      top: $max-trading-card-width;
+    }
+
+    100% {
+      opacity: 1;
+      top: 0;
+    }
+  }
+}

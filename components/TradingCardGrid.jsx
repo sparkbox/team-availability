@@ -1,12 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { availabilityOptions, useFilterContext } from '../context/FilterContext';
 import { useViewContext } from '../context/ViewContext';
 import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
-import TradingCard from './TradingCard';
 import Show from './Show';
+import TradingCard from './TradingCard';
 import TradingCardNumResults from './TradingCardNumResults';
 import ViewToggle from './ViewToggle';
+
+const classes = {
+  FADEOUT: 'cmp-trading-card-grid__grid--fadeout',
+  HIDDEN: 'cmp-trading-card-grid__grid--hidden',
+  FADEIN: 'cmp-trading-card-grid__grid--fadein',
+};
 
 export default function TradingCardGrid({ teamMembers }) {
   const {
@@ -15,22 +21,64 @@ export default function TradingCardGrid({ teamMembers }) {
   const {
     view, setView, layoutContainerRef,
   } = useViewContext();
-  const hoursIdx = getForecastedHoursIdx(weekOffset);
+  const [filteredTeamMembers, setFilteredTeamMembers] = useState(teamMembers);
+  const [gridClassModifier, setGridClassModifier] = useState(classes.HIDDEN);
+  const [isChangingView, setIsChangingView] = useState();
 
-  const filteredTeamMembers = teamMembers.filter((member) => {
-    const hasHoursAvailable = (member.weeklyCapacity - member.forecastedHours[hoursIdx]) > 0;
+  const handleChangeView = (viewString) => {
+    setIsChangingView(true);
+    setTimeout(() => {
+      setView(viewString);
+      setIsChangingView(false);
+    }, 450);
+  };
 
-    if (!hasHoursAvailable && availability === availabilityOptions.AVAILABLE) return false;
-    if (hasHoursAvailable && availability === availabilityOptions.UNAVAILABLE) return false;
+  useEffect(() => {
+    const filterTeamMembers = (allTeamMembers) => (
+      allTeamMembers.filter((member) => {
+        const hoursIdx = getForecastedHoursIdx(weekOffset);
+        const hasHoursAvailable = member.weeklyCapacity - member.forecastedHours[hoursIdx] > 0;
 
-    if (roles.length && !roles.includes(member.role)) return false;
+        if (!hasHoursAvailable && availability === availabilityOptions.AVAILABLE) return false;
+        if (hasHoursAvailable && availability === availabilityOptions.UNAVAILABLE) return false;
 
-    const memberProjects = member.currentProjects.map((currentProject) => currentProject.project);
+        if (roles.length && !roles.includes(member.role)) return false;
 
-    if (project !== 'all' && !(memberProjects.includes(project))) return false;
+        const memberProjects = member.currentProjects.map(
+          (currentProject) => currentProject.project,
+        );
 
-    return true;
-  });
+        if (project !== 'all' && !(memberProjects.includes(project))) return false;
+
+        return true;
+      })
+    );
+
+    const newFilteredTeamMembers = filterTeamMembers(teamMembers);
+
+    if (gridClassModifier === classes.HIDDEN) {
+      setFilteredTeamMembers(newFilteredTeamMembers);
+      setTimeout(() => {
+        setGridClassModifier(classes.FADEIN);
+      }, 450);
+    } else {
+      setGridClassModifier(classes.FADEOUT);
+      setTimeout(() => {
+        setFilteredTeamMembers(newFilteredTeamMembers);
+        setGridClassModifier(classes.FADEIN);
+      }, 450);
+    }
+
+  // Including `gridClasses` in useEffect dependencies causes infinite rerender
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [teamMembers, project, roles, availability, weekOffset]);
+
+  useEffect(() => {
+    setGridClassModifier(classes.FADEOUT);
+    setTimeout(() => {
+      setGridClassModifier(classes.FADEIN);
+    }, 450);
+  }, [isChangingView]);
 
   useEffect(() => {
     if (layoutContainerRef.current.clientWidth < 640) {
@@ -45,10 +93,12 @@ export default function TradingCardGrid({ teamMembers }) {
           numResults={filteredTeamMembers.length}
           numTotal={teamMembers.length}
         />
-        <ViewToggle />
+        <ViewToggle
+          currentView={view}
+          onChangeView={handleChangeView}
+        />
       </div>
-      <div className="cmp-trading-card-grid__grid">
-
+      <div className={`cmp-trading-card-grid__grid ${gridClassModifier}`}>
         <Show when={!!filteredTeamMembers.length}>
           {filteredTeamMembers.map((member) => (
             <article
