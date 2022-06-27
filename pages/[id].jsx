@@ -4,7 +4,7 @@ import getFullName from '../util/getFullName';
 import getParticipantOrLeaderStatus from '../util/getParticipantOrLeaderStatus';
 import { getSkills } from '../util/getSkills';
 import { getPastClients } from '../util/getPastClients';
-import CurrentProjects from '../components/CurrentProjects';
+import Projects from '../components/Projects';
 import Layout from '../components/Layout';
 import PersonalBio from '../components/PersonalBio';
 import PersonalOverview from '../components/PersonalOverview';
@@ -42,7 +42,7 @@ export default function DetailPage({ fetchedTeamMember }) {
         />
       </PersonalOverview>
 
-      <CurrentProjects
+      <Projects
         currentProjects={fetchedTeamMember.currentProjects}
       />
 

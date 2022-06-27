@@ -1,4 +1,4 @@
-.cmp-current-projects {
+.cmp-projects {
   $full-width: 100%;
   $font-weight-regular: 400;
   $font-weight-semibold: 600;
@@ -53,7 +53,7 @@
     }
   }
 
-  &__table-header-row {
+  &__header-row {
     font-size: font-size("3xs");
     font-weight: $font-weight-semibold;
     letter-spacing: 0.05em;
@@ -61,7 +61,7 @@
     text-transform: uppercase;
   }
 
-  &__table-header-cell {
+  &__header-cell {
     display: block;
 
     @media (min-width: $md-screen-width) {
@@ -78,8 +78,8 @@
     }
   }
 
-  &__table-body-cell,
-  &__table-body-cell-header {
+  &__body-cell,
+  &__body-cell-header {
     display: block;
 
     @media (min-width: $md-screen-width) {
@@ -88,7 +88,7 @@
     }
   }
 
-  &__table-body-cell {
+  &__body-cell {
     font-size: font-size("xs");
     margin: space("sm") 0;
 
@@ -106,7 +106,7 @@
     }
   }
 
-  &__table-body-cell-header {
+  &__body-cell-header {
     font-size: font-size("md");
     font-weight: $font-weight-regular;
     letter-spacing: -0.02em;
@@ -124,7 +124,7 @@
     }
   }
 
-  &__table-body-row {
+  &__body-row {
     border: solid;
     border-color: color("gray-200");
     border-width: 0 0 1px;
@@ -136,7 +136,7 @@
       border-bottom: none;
 
       .cmp-current-projects {
-        &__table-body-cell:last-child {
+        &__body-cell:last-child {
           margin: space("sm") 0;
         }
       }
@@ -153,7 +153,7 @@
   }
 
   /* stylelint-disable selector-class-pattern */
-  &__table-body > .cmp-current-projects__table-body-row + .cmp-current-projects__table-body-row {
+  &__table-body > .cmp-current-projects__body-row + .cmp-current-projects__body-row {
     margin-top: space("sm");
 
     @media (min-width: $md-screen-width) {
