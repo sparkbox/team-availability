@@ -16,9 +16,7 @@ export default function TradingCard({
           weeklyCapacity={weeklyCapacity}
           forecastedHours={forecastedHours}
         />
-        <div className="cmp-trading-card__hrs-bar">
-          <HoursBar forecastedHours={forecastedHours} weeklyCapacity={weeklyCapacity} />
-        </div>
+        <HoursBar forecastedHours={forecastedHours} weeklyCapacity={weeklyCapacity} />
         <div>
           <span className="cmp-trading-card__name">{name}</span>
           <p className="cmp-trading-card__title">{jobTitle}</p>
