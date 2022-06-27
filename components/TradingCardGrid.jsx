@@ -5,7 +5,7 @@ import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 import Show from './Show';
 import TradingCard from './TradingCard';
-import TradingCardNumResults from './TradingCardNumResults';
+import FilterResults from './FilterResults';
 import ViewToggle from './ViewToggle';
 
 const classes = {
@@ -90,7 +90,7 @@ export default function TradingCardGrid({ teamMembers }) {
   return (
     <div className="cmp-trading-card-grid" data-view={view}>
       <div className="cmp-trading-card-grid__heading">
-        <TradingCardNumResults
+        <FilterResults
           numResults={filteredTeamMembers.length}
           numTotal={teamMembers.length}
         />
