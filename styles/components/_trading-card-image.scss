@@ -1,5 +1,7 @@
 .cmp-trading-card-image {
   $image-size: $max-trading-card-width;
+  $animation-duration: 450ms;
+  $animation-timing-function: cubic-bezier(0.36, 0.36, 0.09, 0.9);
 
   order: 1;
   position: relative;
@@ -13,80 +15,113 @@
 
   &__overlay {
     position: relative;
-    z-index: 30;
+    border-radius: 100%;
 
-    &::after {
+    &::before {
+      display: block;
       position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
+      inset: 0;
       content: "";
-      transition: opacity 125ms linear;
+      transition: opacity $animation-duration $animation-timing-function;
+      border-radius: 100%;
+    }
 
-      .cmp-trading-card:hover & {
+    &--gray {
+      background:
+        linear-gradient(
+          90deg,
+          hsl(0deg 0% 100%) -51%,
+          hsl(0deg 0% 0%) 24%
+        );
+
+      &::before {
+        background:
+          linear-gradient(
+            90deg,
+            hsl(0deg 0% 50%) -51%,
+            hsl(0deg 0% 0%) 120%
+          );
         opacity: 0;
+      }
+
+      .cmp-trading-card:hover &::before {
+        opacity: 1;
       }
     }
 
-    &--gray::after {
-      background-image:
+    &--blue {
+      background:
         linear-gradient(
           90deg,
-          color("gray-200") -51%,
-          transparent 24%
+          hsl(0deg 0% 100%) -15%,
+          hsl(0deg 0% 50%) 21%,
+          hsl(0deg 0% 0%) 66%
         );
+
+      &::before {
+        background:
+          linear-gradient(
+            90deg,
+            hsl(0deg 0% 100%) -21%,
+            hsl(0deg 0% 50%) 60%,
+            hsl(0deg 0% 0%) 114%
+          );
+        opacity: 0;
+      }
+
+      .cmp-trading-card:hover &::before {
+        opacity: 1;
+      }
     }
 
-    &--blue::after {
-      background-image:
+    &--green {
+      background:
         linear-gradient(
           90deg,
-          color("blue-50-transparency-75") -15%,
-          color("blue-50-transparency-50") 21%,
-          transparent 66%
+          hsl(0deg 0% 100%) 54%,
+          hsl(0deg 0% 50%) 101%
         );
-    }
 
-    &--green::after {
-      background-image:
-        linear-gradient(
-          90deg,
-          color("green-50") 20%,
-          color("green-50-transparency-50") 81%,
-          transparent 171%
-        );
+      &::before {
+        background:
+          linear-gradient(
+            90deg,
+            hsl(0deg 0% 100%) -21%,
+            hsl(0deg 0% 50%) 60%,
+            hsl(0deg 0% 0%) 165%
+          );
+        opacity: 0;
+      }
+
+      .cmp-trading-card:hover &::before {
+        opacity: 1;
+      }
     }
   }
 
   &__image {
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
-    z-index: 50;
-
     &::after {
       position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
+      inset: 0;
+      border-radius: 100%;
       content: "";
-      transition: opacity 125ms linear;
+      mix-blend-mode: multiply;
+    }
+
+    & > span {
+      border-radius: 100%;
     }
 
     &--gray::after {
-      background-color: color("gray-200-transparency-50");
+      background-color: color("gray-100");
     }
 
     &--blue::after {
-      background-color: color("blue-100-transparency-50");
+      background-color: color("blue-100");
     }
 
     &--green::after {
-      background-color: color("green-100-transparency-50");
+      background-color: color("green-100");
     }
   }
 
@@ -114,7 +149,7 @@
       );
     color: color("black");
     font-weight: 700;
-    transition: background-color 125ms linear;
+    transition: background-color $animation-duration $animation-timing-function;
     z-index: 70;
 
     @media (min-width: $sm-screen-width) {
