@@ -21,7 +21,9 @@ export default function TradingCard({
           <span className="cmp-trading-card__name">{name}</span>
           <p className="cmp-trading-card__title">{jobTitle}</p>
         </div>
-        <span className={`cmp-trading-card__hrs cmp-trading-card__hrs--${classColorModifier}`}>{`${weeklyCapacity - forecastedHours}hrs`}</span>
+        <span className={`cmp-trading-card__hours cmp-trading-card__hours--${classColorModifier}`}>
+          {`${weeklyCapacity - forecastedHours}hrs`}
+        </span>
       </a>
     </Link>
   );
