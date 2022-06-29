@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 import PersonalBio from '../components/PersonalBio';
 import PersonalOverview from '../components/PersonalOverview';
 import SkillsGrid from '../components/SkillsGrid';
-import TradingCardImage from '../components/TradingCardImage';
+import ProfilePhoto from '../components/ProfilePhoto';
 import PastClients from '../components/PastClients';
 import Show from '../components/Show';
 import FunFacts from '../components/FunFacts';
@@ -35,7 +35,7 @@ export default function DetailPage({ fetchedTeamMember }) {
         jobTitle={fetchedTeamMember.jobTitle}
         cohortStatus={cohortStatus}
       >
-        <TradingCardImage
+        <ProfilePhoto
           imageUrl={fetchedTeamMember.photo}
           forecastedHours={fetchedTeamMember.forecastedHours[idx]}
           weeklyCapacity={fetchedTeamMember.weeklyCapacity}

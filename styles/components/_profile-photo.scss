@@ -1,4 +1,4 @@
-.cmp-trading-card-image {
+.cmp-profile-photo {
   $image-size: $max-trading-card-width;
   $animation-duration: 450ms;
   $animation-timing-function: cubic-bezier(0.36, 0.36, 0.09, 0.9);
@@ -13,7 +13,7 @@
       $lg-screen-width
     );
 
-  &__overlay {
+  &__background {
     position: relative;
     border-radius: 100%;
 
@@ -99,7 +99,7 @@
     }
   }
 
-  &__image {
+  &__overlay {
     &::after {
       position: absolute;
       inset: 0;
@@ -125,7 +125,7 @@
     }
   }
 
-  &__hours-container {
+  &__hours {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -181,7 +181,7 @@
     }
   }
 
-  &__hours {
+  &__hours-text {
     font-size:
       linear-scale(
         font-size("md"),

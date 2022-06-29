@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import HoursBar from './HoursBar';
-import TradingCardImage from './TradingCardImage';
+import ProfilePhoto from './ProfilePhoto';
 import getClassColorModifierString from '../util/getClassColorModifierString';
 
 export default function TradingCard({
@@ -11,7 +11,7 @@ export default function TradingCard({
   return (
     <Link href={`/${id}`} passHref>
       <a href="replace" className="cmp-trading-card">
-        <TradingCardImage
+        <ProfilePhoto
           imageUrl={photo}
           weeklyCapacity={weeklyCapacity}
           forecastedHours={forecastedHours}
