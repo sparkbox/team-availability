@@ -19,7 +19,7 @@
       text-decoration: underline;
     }
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       margin-right: space("md");
 
       @media (min-width: $md-screen-width) {
@@ -39,7 +39,7 @@
       );
     font-weight: 300;
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       margin-bottom: space("xs");
 
       @media (min-width: $md-screen-width) {
@@ -57,11 +57,11 @@
       color: color("blue-50");
     }
 
-    .cmp-trading-card-grid[data-view="grid"] & {
+    .cmp-card-grid[data-view="grid"] & {
       @include visually-hidden;
     }
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       font-size:
         linear-scale(
           font-size("md"),
@@ -79,7 +79,7 @@
     @include focus-styles;
   }
 
-  .cmp-trading-card-grid[data-view="grid"] & {
+  .cmp-card-grid[data-view="grid"] & {
     width:
       linear-scale(
         $min-trading-card-width,
@@ -89,7 +89,7 @@
       );
   }
 
-  .cmp-trading-card-grid[data-view="list"] & {
+  .cmp-card-grid[data-view="list"] & {
     margin-bottom: space("xl");
     display: flex;
     flex-flow: row wrap;
