@@ -2,7 +2,7 @@ import Head from 'next/head';
 import apiService from '../services/apiService';
 import Filters from '../components/Filters';
 import Layout from '../components/Layout';
-import TradingCardGrid from '../components/TradingCardGrid';
+import CardGrid from '../components/CardGrid';
 import WeekSelect from '../components/WeekSelect';
 import getUniqueCurrentProjects from '../util/getUniqueCurrentProjects';
 import getUniqueRoles from '../util/getUniqueRoles';
@@ -22,7 +22,7 @@ export default function Home({ teamMembers }) {
         <title>Sparkbox Team Availability</title>
         <meta name="description" content="See which Sparkboxers are available for project work for a given week." />
       </Head>
-      <TradingCardGrid
+      <CardGrid
         teamMembers={teamMembers}
       />
     </Layout>

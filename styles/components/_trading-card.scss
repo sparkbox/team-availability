@@ -2,19 +2,6 @@
   width: 100%;
   display: block;
 
-  &__hrs-bar {
-    margin-top: space("sm");
-    height: 0.375rem;
-    margin-bottom: 0;
-
-    .cmp-trading-card-grid[data-view="list"] & {
-      margin-top: 0;
-      height: 0.5rem;
-      width: 100%;
-      order: 1;
-    }
-  }
-
   &__name {
     display: inline-block;
     font-size:
@@ -32,7 +19,7 @@
       text-decoration: underline;
     }
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       margin-right: space("md");
 
       @media (min-width: $md-screen-width) {
@@ -52,7 +39,7 @@
       );
     font-weight: 300;
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       margin-bottom: space("xs");
 
       @media (min-width: $md-screen-width) {
@@ -61,7 +48,7 @@
     }
   }
 
-  &__hrs {
+  &__hours {
     &--green {
       color: color("green-50");
     }
@@ -70,11 +57,11 @@
       color: color("blue-50");
     }
 
-    .cmp-trading-card-grid[data-view="grid"] & {
+    .cmp-card-grid[data-view="grid"] & {
       @include visually-hidden;
     }
 
-    .cmp-trading-card-grid[data-view="list"] & {
+    .cmp-card-grid[data-view="list"] & {
       font-size:
         linear-scale(
           font-size("md"),
@@ -92,7 +79,7 @@
     @include focus-styles;
   }
 
-  .cmp-trading-card-grid[data-view="grid"] & {
+  .cmp-card-grid[data-view="grid"] & {
     width:
       linear-scale(
         $min-trading-card-width,
@@ -102,7 +89,7 @@
       );
   }
 
-  .cmp-trading-card-grid[data-view="list"] & {
+  .cmp-card-grid[data-view="list"] & {
     margin-bottom: space("xl");
     display: flex;
     flex-flow: row wrap;

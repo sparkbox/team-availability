@@ -1,4 +1,4 @@
-.cmp-trading-card-grid {
+.cmp-card-grid {
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -9,10 +9,10 @@
     justify-content: space-between;
   }
 
-  &__grid {
+  &__container {
     position: relative;
 
-    .cmp-trading-card-grid[data-view="grid"] & {
+    .cmp-card-grid[data-view="grid"] & {
       $grid-col-width: linear-scale(
         $min-trading-card-width,
         $max-trading-card-width,

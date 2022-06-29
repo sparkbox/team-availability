@@ -5,18 +5,18 @@ import getFullName from '../util/getFullName';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
 import Show from './Show';
 import TradingCard from './TradingCard';
-import TradingCardNumResults from './TradingCardNumResults';
+import FilterResults from './FilterResults';
 import ViewToggle from './ViewToggle';
 
 const classes = {
-  FADEOUT: 'cmp-trading-card-grid__grid--fadeout',
-  HIDDEN: 'cmp-trading-card-grid__grid--hidden',
-  FADEIN: 'cmp-trading-card-grid__grid--fadein',
+  FADEOUT: 'cmp-card-grid__container--fadeout',
+  HIDDEN: 'cmp-card-grid__container--hidden',
+  FADEIN: 'cmp-card-grid__container--fadein',
 };
 
 const AVAILABILITY_CUTOFF = 16;
 
-export default function TradingCardGrid({ teamMembers }) {
+export default function CardGrid({ teamMembers }) {
   const {
     project, roles, availability, weekOffset,
   } = useFilterContext();
@@ -88,9 +88,9 @@ export default function TradingCardGrid({ teamMembers }) {
   }, [layoutContainerRef, setView]);
 
   return (
-    <div className="cmp-trading-card-grid" data-view={view}>
-      <div className="cmp-trading-card-grid__heading">
-        <TradingCardNumResults
+    <div className="cmp-card-grid" data-view={view}>
+      <div className="cmp-card-grid__heading">
+        <FilterResults
           numResults={filteredTeamMembers.length}
           numTotal={teamMembers.length}
         />
@@ -99,7 +99,7 @@ export default function TradingCardGrid({ teamMembers }) {
           onChangeView={handleChangeView}
         />
       </div>
-      <div className={`cmp-trading-card-grid__grid ${gridClassModifier}`}>
+      <div className={`cmp-card-grid__container ${gridClassModifier}`}>
         <Show when={!!filteredTeamMembers.length}>
           {filteredTeamMembers.map((member) => (
             <article
