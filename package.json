@@ -22,7 +22,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
-    "eslint": "8.20.0",
+    "eslint": "8.21.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "12.2.3",
     "jest": "^28.1.3",
