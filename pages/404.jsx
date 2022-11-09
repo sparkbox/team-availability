@@ -42,7 +42,7 @@ export default function PageNotFound() {
         </figcaption>
       </figure>
 
-      <Link href="/" passHref><a href="replace">&lt; Return whence you came.</a></Link>
+      <Link href="/">&lt; Return whence you came.</Link>
     </Layout>
   );
 }

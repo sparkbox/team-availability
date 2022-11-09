@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import getClassColorModifierString from '../util/getClassColorModifierString';
 
 export default function ProfilePhoto({ imageUrl, weeklyCapacity, forecastedHours }) {
