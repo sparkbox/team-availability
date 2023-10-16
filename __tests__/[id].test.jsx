@@ -1,5 +1,5 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { FilterProvider } from '../context/FilterContext';
 import { ViewProvider } from '../context/ViewContext';
 import apiService from '../services/apiService';
@@ -30,10 +30,12 @@ describe('DetailPage', () => {
         <FilterProvider>
           <DetailPage fetchedTeamMember={MOCK_TEAM_MEMBER} />
         </FilterProvider>
-      </ViewProvider>,
+      </ViewProvider>
     );
 
-    await waitFor(() => expect(screen.getByText('Aragorn Elessar II')).toBeInTheDocument());
+    await waitFor(() =>
+      expect(screen.getByText('Aragorn Elessar II')).toBeInTheDocument()
+    );
   });
 });
 
@@ -68,7 +70,7 @@ describe('getServerSideProps', () => {
             cohortParticipant: 'fellowship',
           },
         },
-      }),
+      })
     );
   });
 });
