@@ -3,6 +3,10 @@ import getClassColorModifierString from '../util/getClassColorModifierString';
 
 export default function ProfilePhoto({ imageUrl, weeklyCapacity, forecastedHours }) {
   const classColorModifier = getClassColorModifierString(weeklyCapacity, forecastedHours);
+  let hours = weeklyCapacity - forecastedHours;
+  if (Number.isNaN(hours)) {
+    hours = 0;
+  }
 
   return (
     <div className="cmp-profile-photo">
@@ -20,7 +24,7 @@ export default function ProfilePhoto({ imageUrl, weeklyCapacity, forecastedHours
       </div>
       <div className={`cmp-profile-photo__hours cmp-profile-photo__hours--${classColorModifier}`}>
         <span aria-hidden="true">
-          <span className="cmp-profile-photo__hours-text">{weeklyCapacity - forecastedHours}</span>
+          <span className="cmp-profile-photo__hours-text">{hours}</span>
           {' '}
           hrs
         </span>
