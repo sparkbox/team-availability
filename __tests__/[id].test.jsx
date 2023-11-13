@@ -39,38 +39,38 @@ describe('DetailPage', () => {
   });
 });
 
-// describe('getStaticProps', () => {
-//   it('calls getMemberById', async () => {
-//     const context = {
-//       params: {
-//         id: '0001',
-//       },
-//       req: {
-//         headers: {
-//           host: 'localhost:3000',
-//         },
-//       },
-//     };
-//     const response = await getStaticProps(context);
+describe('getStaticProps', () => {
+  it('calls getMemberById', async () => {
+    const context = {
+      params: {
+        id: '0001',
+      },
+      req: {
+        headers: {
+          host: 'localhost:3000',
+        },
+      },
+    };
+    const response = await getStaticProps(context);
 
-//     expect(response).toEqual(
-//       expect.objectContaining({
-//         props: {
-//           fetchedTeamMember: {
-//             firstName: 'Aragorn',
-//             lastName: 'Elessar',
-//             suffix: 'II',
-//             photo: '/images/mock/aragorn.png',
-//             currentProjects: [],
-//             pastProjects: [''],
-//             funFacts: [],
-//             weeklyCapacity: 32,
-//             forecastedHours: [11, 23],
-//             cohortLeader: 'fellowship',
-//             cohortParticipant: 'fellowship',
-//           },
-//         },
-//       })
-//     );
-//   });
-// });
+    expect(response).toEqual(
+      expect.objectContaining({
+        props: {
+          fetchedTeamMember: {
+            firstName: 'Aragorn',
+            lastName: 'Elessar',
+            suffix: 'II',
+            photo: '/images/mock/aragorn.png',
+            currentProjects: [],
+            pastProjects: [''],
+            funFacts: [],
+            weeklyCapacity: 32,
+            forecastedHours: [11, 23],
+            cohortLeader: 'fellowship',
+            cohortParticipant: 'fellowship',
+          },
+        },
+      })
+    );
+  });
+});

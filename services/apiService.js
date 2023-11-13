@@ -1,23 +1,17 @@
-const getAllTeamMembers = async (url) => {
-  const response = await fetch(url);
-  const data = await response.json();
+import teamMembers from '../mock-data/fellowship.json';
 
-  const dataAsArrayOfObjects = Object.keys(data).map((key) => (
+const getAllTeamMembers = async () => {
+  const dataAsArrayOfObjects = Object.keys(teamMembers).map((key) => (
     {
       id: key,
-      ...data[key],
+      ...teamMembers[key],
     }
   ));
 
   return dataAsArrayOfObjects;
 };
 
-const getTeamMemberById = async (url, identifier) => {
-  const response = await fetch(url + identifier);
-  const data = await response.json();
-
-  return data[identifier];
-};
+const getTeamMemberById = async (identifier) => teamMembers[identifier];
 
 const apiService = {
   getAllTeamMembers,

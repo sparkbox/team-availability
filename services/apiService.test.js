@@ -15,7 +15,7 @@ describe('apiService', () => {
     });
 
     it('returns team members as an array of objects ', async () => {
-      const actual = await apiService.getAllTeamMembers('url');
+      const actual = await apiService.getAllTeamMembers();
       expect(Array.isArray(actual)).toBe(true);
     });
 
@@ -40,14 +40,14 @@ describe('apiService', () => {
 
     it('returns team member data that matches a given id', async () => {
       const id = Object.keys(MOCK_DATA)[0];
-      const actual = await apiService.getTeamMemberById('url', id);
+      const actual = await apiService.getTeamMemberById(id);
       expect(actual).toBe(MOCK_DATA[id]);
     });
 
     // falsy value is required for [id].jsx 404 page redirect
     it('returns falsy value if no team member is found', async () => {
       const id = 'badid';
-      const actual = await apiService.getTeamMemberById('url', id);
+      const actual = await apiService.getTeamMemberById(id);
       expect(actual).toBeFalsy();
     });
   });

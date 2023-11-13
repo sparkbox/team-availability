@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 import getParticipantOrLeaderStatus from '../util/getParticipantOrLeaderStatus';
 import { getSkills } from '../util/getSkills';
@@ -14,7 +15,6 @@ import Show from '../components/Show';
 import FunFacts from '../components/FunFacts';
 import { useFilterContext } from '../context/FilterContext';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
-import data from '../mock-data/fellowship.json';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
@@ -66,10 +66,10 @@ export default function DetailPage({ fetchedTeamMember }) {
 }
 
 export async function getStaticPaths() {
-  const memberIds = Object.keys(data);
+  const teamMembers = await apiService.getAllTeamMembers();
 
   return {
-    paths: memberIds.map((id) => ({
+    paths: teamMembers.map(({ id }) => ({
       params: {
         id,
       },
@@ -80,7 +80,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { id } = params;
-  const fetchedTeamMember = data[id];
+  const fetchedTeamMember = await apiService.getTeamMemberById(id);
 
   if (!fetchedTeamMember) {
     return {
