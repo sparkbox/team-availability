@@ -1,13 +1,11 @@
 import Head from 'next/head';
-import apiService from '../services/apiService';
 import Filters from '../components/Filters';
 import Layout from '../components/Layout';
 import CardGrid from '../components/CardGrid';
 import WeekSelect from '../components/WeekSelect';
 import getUniqueCurrentProjects from '../util/getUniqueCurrentProjects';
 import getUniqueRoles from '../util/getUniqueRoles';
-
-const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
+import data from '../mock-data/fellowship.json';
 
 export default function Home({ teamMembers }) {
   const uniqueRoles = getUniqueRoles(teamMembers);
@@ -29,9 +27,13 @@ export default function Home({ teamMembers }) {
   );
 }
 
-export async function getServerSideProps({ req }) {
-  const { host } = req.headers;
-  const teamMembers = await apiService.getAllTeamMembers(`${scheme}${host}/api/fellowship/`);
+export async function getStaticProps() {
+  const teamMembers = Object.keys(data).map((key) => (
+    {
+      id: key,
+      ...data[key],
+    }
+  ));
 
   return {
     props: {

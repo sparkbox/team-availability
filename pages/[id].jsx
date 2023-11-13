@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import apiService from '../services/apiService';
 import getFullName from '../util/getFullName';
 import getParticipantOrLeaderStatus from '../util/getParticipantOrLeaderStatus';
 import { getSkills } from '../util/getSkills';
@@ -15,6 +14,7 @@ import Show from '../components/Show';
 import FunFacts from '../components/FunFacts';
 import { useFilterContext } from '../context/FilterContext';
 import getForecastedHoursIdx from '../util/getForecastedHoursIdx';
+import data from '../mock-data/fellowship.json';
 
 export default function DetailPage({ fetchedTeamMember }) {
   const cohortStatus = getParticipantOrLeaderStatus(fetchedTeamMember);
@@ -28,7 +28,10 @@ export default function DetailPage({ fetchedTeamMember }) {
     <Layout>
       <Head>
         <title>{`${fullName} | Sparkbox Team Availability`}</title>
-        <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
+        <meta
+          name="description"
+          content={`View details about ${fullName}, including their projects, skills, and interests.`}
+        />
       </Head>
       <PersonalOverview
         name={fullName}
@@ -42,9 +45,7 @@ export default function DetailPage({ fetchedTeamMember }) {
         />
       </PersonalOverview>
 
-      <Projects
-        currentProjects={fetchedTeamMember.currentProjects}
-      />
+      <Projects currentProjects={fetchedTeamMember.currentProjects} />
 
       <SkillsGrid skilldata={skills} />
 
@@ -64,12 +65,22 @@ export default function DetailPage({ fetchedTeamMember }) {
   );
 }
 
-export async function getServerSideProps({ params, req }) {
+export async function getStaticPaths() {
+  const memberIds = Object.keys(data);
+
+  return {
+    paths: memberIds.map((id) => ({
+      params: {
+        id,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const { id } = params;
-  const { host } = req.headers;
-  const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
-  const baseUrl = `${scheme}${host}/api/fellowship/`;
-  const fetchedTeamMember = await apiService.getTeamMemberById(baseUrl, id);
+  const fetchedTeamMember = data[id];
 
   if (!fetchedTeamMember) {
     return {
