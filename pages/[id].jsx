@@ -28,7 +28,10 @@ export default function DetailPage({ fetchedTeamMember }) {
     <Layout>
       <Head>
         <title>{`${fullName} | Sparkbox Team Availability`}</title>
-        <meta name="description" content={`View details about ${fullName}, including their projects, skills, and interests.`} />
+        <meta
+          name="description"
+          content={`View details about ${fullName}, including their projects, skills, and interests.`}
+        />
       </Head>
       <PersonalOverview
         name={fullName}
@@ -42,9 +45,7 @@ export default function DetailPage({ fetchedTeamMember }) {
         />
       </PersonalOverview>
 
-      <Projects
-        currentProjects={fetchedTeamMember.currentProjects}
-      />
+      <Projects currentProjects={fetchedTeamMember.currentProjects} />
 
       <SkillsGrid skilldata={skills} />
 
@@ -64,12 +65,22 @@ export default function DetailPage({ fetchedTeamMember }) {
   );
 }
 
-export async function getServerSideProps({ params, req }) {
+export async function getStaticPaths() {
+  const teamMembers = await apiService.getAllTeamMembers();
+
+  return {
+    paths: teamMembers.map(({ id }) => ({
+      params: {
+        id,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const { id } = params;
-  const { host } = req.headers;
-  const scheme = process.env.NODE_ENV === 'development' ? 'http://' : 'https://';
-  const baseUrl = `${scheme}${host}/api/fellowship/`;
-  const fetchedTeamMember = await apiService.getTeamMemberById(baseUrl, id);
+  const fetchedTeamMember = await apiService.getTeamMemberById(id);
 
   if (!fetchedTeamMember) {
     return {

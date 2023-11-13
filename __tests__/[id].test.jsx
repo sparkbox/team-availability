@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import { FilterProvider } from '../context/FilterContext';
 import { ViewProvider } from '../context/ViewContext';
 import apiService from '../services/apiService';
-import DetailPage, { getServerSideProps } from '../pages/[id]';
+import DetailPage, { getStaticProps } from '../pages/[id]';
 
 const MOCK_TEAM_MEMBER = {
   firstName: 'Aragorn',
@@ -39,7 +39,7 @@ describe('DetailPage', () => {
   });
 });
 
-describe('getServerSideProps', () => {
+describe('getStaticProps', () => {
   it('calls getMemberById', async () => {
     const context = {
       params: {
@@ -51,7 +51,7 @@ describe('getServerSideProps', () => {
         },
       },
     };
-    const response = await getServerSideProps(context);
+    const response = await getStaticProps(context);
 
     expect(response).toEqual(
       expect.objectContaining({
